@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <style>
+        li{list-style: none;}
+        main{}
+        main .mt{overflow: hidden;}
+        main .mt .mt-l ul{border: 1px solid #eee;width: 188px;float: left;}
+        main .mt .mt-l ul li{font-style:normal;height: 56px;border-bottom: 1px solid #eee;width: 188px;text-align: center;background: #f8f8f8;}
+        main .mt .mt-l ul li:hover{background:#eee;}
+        main .mt .mt-l ul li .mt-l-l{width: 50px;height: 56px;float: left;text-align: right;line-height: 56px;}
+        main .mt .mt-l ul li .mt-l-l i{margin-right: 10px;}
+        main .mt .mt-l ul li .mt-l-r{float:left;text-align: left;margin-top: 10px;}
+        main .mt .mt-l ul li .mt-l-r span:hover{color: #4ba979;}
+        main .mt .mt-l ul li .mt-l-r a:hover{color: #ee7737;}
+        main .mt .mt-l ul li p{}
+        main .mt .mt-l ul li p a{color: #b2b2b2;padding-right: 5px;}
+        main .mt .mt-l ul li i{font-style:normal;width: 20px;height: 20px;display: inline-block;}
+        main .mt .mt-l ul li b{font-style:normal;color: #b2b2b2;}
+        /* banner */
+        main .mt .mt-c{width: 750px;float: left;height: 443px;position: relative;overflow: hidden;margin:15px 17px;}
+        main .mt .mt-c a{width: 750px;height: 443px; position: absolute;left: 750px;top: 0;}
+        main .mt .mt-c a:first-child{left:0;}
+        main .mt .mt-c a img{height: 443px;width: 750px;}
+        main .mt .mt-c .btns{}
+        main .mt .mt-c .btns input{width: 44px;height: 78px;background: #6c8e92;border:0;top:198px;position: absolute;}
+        main .mt .mt-c .btns #left{left:0}
+        main .mt .mt-c .btns #right{right:0}
+
+        main .mt .mt-r{float: left;}
+        main .mt .mt-r .imgbox{height: 211px;margin-top:15px;height: 253px;}
+        main .mt .mt-r .imgbox p{width:209px;border: 1px solid #eee;height: 34px;line-height: 34px;}
+        main .mt .mt-r .imgbox p span{display: inline-block;width: 163px;}
+        main .mt .mt-r .ibox{width: 209px;margin-top:11px; }
+        main .mt .mt-r .ibox .te3{display: block;background: #009237;widows: 209px;text-align: center;height: 36px;line-height: 36px;color: #fff;}
+        main .mt .mt-r .iboxt ul{border-bottom: 1px solid #ddd;margin:19px 0 0 12px;height: 24px;}
+        main .mt .mt-r .iboxt ul li{float: left;height: 24px;}
+        main .mt .mt-r .iboxt ul li:hover{border-bottom:1px solid #f57a11;}
+        main .mt .mt-r .iboxt ul .t5{border-bottom:1px solid #f57a11;}
+        main .mt .mt-r .iboxt ul li a{color: #000;padding: 6px; }
+        main .mt .mt-r .iboxt p{font-size:12px;color:#666;margin-top:13px;}
+        main .mt .mt-r .iboxt p span{float:right;}
+
+        main .mb{height: 275px;}
+        main .mb .mb-l{width:365px;height: 275px;float: left;}
+        main .mb .mb-l h4{border-bottom: 1px solid #0f0;height: 27px;}
+        main .mb .mb-l h4 a{float: right; color: #ccc;}
+        main .mb .mb-l ul{}
+        main .mb .mb-l ul li{width: 364px;height: 33px;border: 1px dashed #ccc;}
+        main .mb .mb-l ul li span{}
+        main .mb .mb-l ul li p{display: inline-block;margin-left: 30px;}
+        main .mb .mb-l ul li a{float: right;color: red;}
+        main .mb .mb-c{width: 364px;height: 275px;float: left;margin: 0 16px;}
+        main .mb .mb-c h4{border-bottom: 1px solid #0f0;height: 27px;}
+        main .mb .mb-c h4 a{float: right;color: #ccc;}
+        main .mb .mb-c ul{}
+        main .mb .mb-c ul li{width: 364px;height: 33px;border: 1px dashed #ccc;}
+        main .mb .mb-c ul li span{}
+        main .mb .mb-c ul li p{display: inline-block;margin-left: 30px;}
+        main .mb .mb-c ul li a{float: right;color: red;}
+        main .mb .mb-r{width: 409px;height: 275px;float: left;}
+        main .mb .mb-r{width: 409px;height: 275px;float: left;margin: 0 10px;}
+        main .mb .mb-r h4{border-bottom: 1px solid #0f0;height: 27px;}
+        main .mb .mb-r h4 a{float: right;color: #ccc;}
+        main .mb .mb-r ul{}
+        main .mb .mb-r ul li{width: 409px;height: 33px;border: 1px dashed #ccc;}
+        main .mb .mb-r ul li span{}
+        main .mb .mb-r ul li p{display: inline-block;margin-left: 30px;}
+        main .mb .mb-r ul li a{float: right;color: red;}
+        main .mtg{height: 486px;}
+        main .mtg .h4{height: 30px;border-bottom: 1px solid #0f0;}
+        main .mtg h4 p{float: right;}
+        main .mtg h4 p span{color:#666;}
+        main .mtc{margin-top: 15px}
+        main .mtcl{width: 214px;background: #ffedef;height: 422px;float: left;}
+        main .mtcr{width: 976px;background: #ccc;height: 422px;float: left;}
+        main .mtcl .mtclb{margin:20px 15px 0 20px;}
+        main .mtcl .mtclb h3{color: #f4504e;}
+        main .mtcl .mtclb h4{}
+        main .mtcl .mtclb img{margin-left: 90px;}
+        main .mtcl .mtclb .p{margin-left:42px;border-left: 4px solid #f57a11;}
+        main .mtcl .mtclb p span{margin-left:6px;}
+        main .mtcl .mtclt{margin:20px 15px 0 0px;border-top: 1px solid #ddd;width: 178px;}
+        main .mtcl .mtclt p{line-height: 29px;}
+        main .mtcl .mtclt p a{padding: 0 7px;border-right: 1px solid #ddd;border-left: 1px solid #ddd;}
+        main .mtcl .mtclt p .te4{border-left:0;}
+        main .mtcr{background: #fff;}
+        main .mtcr ul{}
+        main .mtcr ul li{width: 193px;height: 209px;border: 1px solid #ddd;float:left;position: relative;}
+        /* main .mtcr ul a{position: absolute;width: 193px;height: 209px;background:blue;} */
+        main .mtcr ul li .mtcr-da{width: 160px;height: 200px;margin:4px 0 0 19px;overflow: hidden;}
+        main .mtcr ul li .mtcr-da .imgbox{width: 149px;height: 149px;display: block;margin:4px 0 6px 5px; text-align: center;line-height: 149px;}
+        main .mtcr ul li .mtcr-da .imgbox img{}
+        main .mtcr ul li .mtcr-da p{font-size: 12px;width: 193px;}
+        main .mtcr ul li .mtcr-da span{color: #cc0057;}
+        main .mtcr ul li .mtcr-da s{color:#999;}
+        main .m-sale{height:487px;}
+        main .m-sale h4{height: 30px;border-bottom: 1px solid #0f0;}
+        main .m-sale h4 i{}
+        main .m-sale h4 b{}
+        main .m-sale h4 p{float: right;}
+        main .m-sale h4 p span{}
+        main .box{margin-top:15px;}
+        main .msab{float: left;}
+        main .m-sale ul{float: left;}
+        main .m-sale ul li{float: left;width:200px;height: 240px;}
+        
+        main .mark{height: 486px;}
+        main .mark .h4{height: 30px;border-bottom: 1px solid #0f0;}
+        main .mark h4 p{float: right;}
+        main .mark h4 p span{color:#666;}
+        main .mark .markt{height:443px; margin-top: 15px;}
+        main .mark .markt .ml{float: left;width: 215px;height:434px;background:#fff4e7;}
+        main .mark .markt .ml h4{margin:28px 0 20px 50px;border-left: 4px solid #f57a11;}
+        main .mark .markt .ml h4 span{margin-left: 7px;}
+        main .mark .markt .ml .mlb{width: 173px; border-top:1px solid #ddd;margin-left:28px;}
+        main .mark .markt .ml .mlb p{width: 166px;margin-top: 20px;height: 30px;}
+        main .mark .markt .ml .mlb p a{padding:0px 4px;border-right: 1px solid #ddd; }
+        main .mark .markt .mr{float: left;width: 966px;}
+        main .mark .markt .mr ul li{width: 190px;height: 209px;border: 1px solid #ddd;float:left;}
+        main .mark .markt .mr ul li .mtcr-da{width: 160px;height: 200px;margin:4px 0 0 19px;overflow: hidden;}
+        main .mark .markt .mr ul li .mtcr-da .imgbox{width: 149px;height: 149px;display: block;margin:4px 0 6px 5px; text-align: center;line-height: 149px;}
+        main .mark .markt .mr ul li .mtcr-da .imgbox img{}
+        main .mark .markt .mr ul li .mtcr-da p{font-size: 12px;width: 193px;}
+
+        main .minf{height: 456px;}
+        main .minf .ml{width: 420px;height: 456px;float:left;}
+        main .minf .ml h4{text-align: center;height:50px;border-bottom: 1px solid #009237;line-height: 50px;}
+        main .minf .ml h4 span{}
+        main .minf .ml p{margin-top:10px;}
+
+        main .minf .mc{width: 342px;height: 456px;float:left;margin:0 25px;}
+        main .minf .mc h4{text-align: center;height:50px;border-bottom: 1px solid #009237;line-height: 50px;}
+        main .minf .mc h4 span{}
+        main .minf .mc h4 a{float:right;}
+        main .minf .mc ul{}
+        main .minf .mc ul li{float: left;width:167px;margin:10px 3px 10px 0;}
+        main .minf .mc ul li p{cursor: pointer;}
+        main .minf .mc ul li p:hover{color: #f57a11;}
+        main .minf .mr{width: 370px;height:456px;float: left;}
+        main .minf .mr h4{text-align: center;height:50px;border-bottom: 1px solid #009237;line-height: 50px;}
+        main .minf .mr h4 a{float:right;color: #333;}
+        main .minf .mr .mrt{height: 237px;}
+        main .minf .mr .mrt p{line-height: 40px;height:40px;width: 365px;text-indent: 10px;position: relative;cursor: pointer;}
+        main .minf .mr .mrt p::before{content:"";border: 3px solid #000;border-radius:50%;position: absolute;top:18px;left:0px;}
+        main .minf .mc .mrt p a:hover{color: #f57a11;}
+        main .minf .mr .mrb{}
+        main .minf .mr .mrb p{line-height: 40px;height:40px;width: 365px;text-indent: 10px;position: relative;cursor: pointer;}
+        main .minf .mr .mrb p::before{content:"";border: 3px solid #000;border-radius:50%;position: absolute;top:18px;left:0px;}
+        main .minf .mc .mrb p a:hover{color: #f57a11;}
+        main .ency{height:240px;}
+        main .ency h4{height: 48px;border:1px solid #ddd;line-height: 48px;}
+        main .ency h4 p{float:right;}
+        main .ency h4 p a{color:#333;padding:0 10px;border-right:1px solid #6cb2eb;}
+        main .ency h4 p .t6{border-right: 0;}
+        main .ency ul{}
+        main .ency ul li{width: 170px;height:192px;overflow: hidden;float: left;text-align:center;cursor:pointer;}
+        main .ency ul li:hover{background: #f2f2f2;}
+        main .ency ul li .imgbox{width:95px;height:95px;border:2px solid #ddd;border-radius: 50%;margin:20px auto;overflow: hidden;}
+        main .ency ul li .imgbox img{width: 93px;height: 93px;}
+        main .ency ul li p:hover{text-decoration: underline;color:#f57a11;}
+        main .ency ul li:hover .imgbox{border:2px solid  #fd7d28;}
+        main .cate{height: 56px;background:#eee;line-height: 56px;}
+        main .cate span{float:right;}
+        main .cate a{margin-left:60px;cursor: pointer;}
+        main .cate a:hover{color:#f57a11;cursor: pointer;}
+        main .cate span:hover{color:#f57a11;}
+        footer{height:85px;margin-top:15px;text-align: center;}
+        footer h4{height: 48px;line-height: 48px;background: #eee;text-align: center;}
+        footer h4 a{padding:0 10px;border-right:1px solid #906690;}
+        footer h4 a:hover{text-decoration: underline;color:#f57a11;cursor: pointer;}
+        footer h4 .t7{border-right:0;}
+        footer p{margin-top:20px;}
+       </style>
+</head>
+<body>
+<div id="top" >
+    <div class="margin">
+    <div class="l">
+        <span class="first">您好，欢迎来到水果交易全新改版！</span><i></i><a href="login.html">会员登录</a><span>|</span><a href="register.html">免费注册</a><span>|</span><a href="#">忘记密码</a>
+    </div>
+    <div class="r">
+        <a href="#">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
+    </div> 
+    <div class="appear">
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+    </div>
+   </div>
+</div>
+<!-- header -->
+<header>
+    <div class="margin">
+        <div class="l">
+            <img src="images/logo.gif" >
+        </div>
+        <div class="c">
+            <div class="c-t">
+                <div class="box">
+                <input type="text" placeholder="请输入关键字" class="txt"/>
+                <span class="sea"><i>V</i></span>
+                <!-- 下拉框 -->
+                <ul class="sele">
+                        <li>水果零售</li>
+                        <li>水果批发</li>
+                        <li>水果求购</li>
+                        <li>价格行情</li>
+                        <li>水果资讯</li>
+                        <li>批发市场</li>
+                        <li>水果供应商</li>
+                        <li>百科</li>
+                        <li>水果学院</li>
+                    </ul>
+                </div>
+                <input type="button" value="搜索" class="search">
+            </div>
+            <div class="c-b">
+                <span>推广热搜：</span>
+                <a href="#">苹果</a>
+                <a href="#">葡萄</a>
+                <a href="#">西瓜</a>
+                <a href="#">脐橙</a>
+                <a href="#">桔子</a>
+                <a href="#">草莓</a>
+                <a href="#">冬枣</a>
+                <a href="#">荔枝</a>
+                <a href="#">毛桃</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+        <div class="r"><img src="images/t1.jpg"></div>
+    </div>
+</header>
+<nav>
+    <div class="margin">
+        <span class="te1">水果市场</span>
+        <ul class="n-li"> 
+                <li><a href="#" class="te">水果零售</a></li>
+                <li><a href="#">水果批发</a></li>
+                <li><a href="#">水果求购</a></li>
+                <li><a href="#">价格行情</a></li>
+                <li><a href="#">水果资讯</a></li>
+                <li><a href="#">批发市场</a></li>
+                <li><a href="#">水果供应商</a></li>
+                <li><a href="#">百科</a></li>
+                <li><a href="#">水果学院</a></li>
+            </ul>
+        <span class="tes">手机交易</span>
+    </div>
+</nav>
+<main>
+    <div class="margin">
+        <div class="mt">
+            <div class="mt-l">
+                <ul>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-yiliaohangyedeICON-"></i></div>
+                        <div class="mt-l-r"><span>生鲜水果</span><b>></b> <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-fanqie"></i></div>
+                        <div class="mt-l-r"><span>蔬菜批发</span><b>></b> <p><a>白菜</a><a>小白菜</a><a>生菜</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-cao"></i></div>
+                        <div class="mt-l-r"><span>畜牧禽类</span><b>></b> <p><a>鸡</a><a>鸭</a><a>鹅</a><a>鸽子</a><a>牛</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-yu"></i></div>
+                        <div class="mt-l-r"><span>粮油米面</span><b>></b> <p><a>红豆</a><a>大豆</a><a>绿豆</a><a>芸</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-ganguo"></i></div>
+                        <div class="mt-l-r"><span>干果坚果</span><b>></b> <p><a>核桃</a><a>板栗</a><a>桂圆干</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-shuiguo"></i></div>
+                        <div class="mt-l-r"><span>水果苗木</span><b>></b> <p><a>果树苗木</a><a>水果种子</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-hua"></i></div>
+                        <div class="mt-l-r"><span>冷库水果</span><b>></b> <p><a>冷库水果</a></p></div>
+                    </li>
+                    <li>
+                        <div class="mt-l-l"><i class="iconfont icon-gengdidilibaohubutiechaxun"></i></div>
+                        <div class="mt-l-r"><span>水果苗木</span><b>></b> <p><a>苹果树苗</a><a>葡萄树</a></p></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-c">
+                    <a href="#"><img src="images/b1.jpg"></a>
+                    <a href="#"><img src="images/b2.jpg"></a>
+                    <a href="#"><img src="images/b3.jpg"></a>
+                <div class="btns">
+                    <input type="button" id="left" value="<">
+                    <input type="button" id="right" value=">">
+                </div>
+            </div>
+            <div class="mt-r">
+                <div class="imgbox">
+                    <img src="images/t2.jpg">
+                    <p><i></i><span>怎么制作顺序如何...</span></p>
+                </div>
+                <div class="ibox">
+                    <a href="#" class="te3">注册水果页面</a>
+                    <div class="iboxt">
+                        <ul>
+                            <li class="t5"><a href="#" >公告</a></li>
+                            <li><a href="#">买家</a></li>
+                            <li><a href="#">卖家</a></li>
+                            <li><a href="#">百科</a></li>
+                        </ul>
+                        <p><a>会员业务套餐调整公告</a><span>05-02</span></p>
+                        <p><a>水果交易网近期将删除未...</a><span>06-19</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="margin">
+        <div class="mb">
+            <div class="mb-l">
+                <h4><b>最新供应</b><a>更多</a></h4>
+                <ul>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>￥1.00</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                </ul>
+            </div>
+            <div class="mb-c">
+                <h4><b>最新供应</b><a>更多</a></h4>
+                <ul>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>￥1.00</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                </ul>
+            </div>
+            <div class="mb-r">
+                <h4><b>最新供应</b><a>更多</a></h4>
+                <ul>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>￥1.00</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                    <li><span>2019-07-02</span><p>今日早熟苹果</p><a>面议</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="margin">
+        <div class="mtg">
+            <h4 class="h4"><i></i><b>水果批发</b><p><span>生鲜水果</span><span>蔬菜批发</span><span>畜牧禽类</span><span>粮油米面</span><span>水果苗木</span><span>冷库水果</span><span>水果树苗</span><span>梨树苗</span></p></h4>
+            <div class="mtc">
+                <div class="mtcl">
+                    <div class="mtclb">
+                        <h3>水果频道</h3>
+                        <h4>集实力商家重磅来袭</h4>
+                        <img src="images/t4.jpg">
+                        <p class="p"><span>生鲜水果</span></p>
+                        <div class="mtclt">
+                            <p><span><a class="te4">苹果</a><a>西瓜</a><a>油桃</a></span>
+                            <span><a>桃子</a><span><a>草莓</a><a>桔子</a></span>
+                            <p><span><a>梨</a><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a><a>桂圆,龙眼</a></span>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mtcr">
+                    <ul id="cont">
+                        <!-- <li>
+                        <div class="mtcr-da">
+                        <div class="imgbox"><img src="images/gt1.jpg"></div>
+                        <p>湖北省随州澳洲红肉李子批发</p>
+                        <span>面议</span><s>￥30:00</s>
+                        </div>
+                        </li> -->
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="margin">
+        <div class="m-sale">
+                <h4><i></i><b>水果批发</b><p><span>生鲜水果</span><span>蔬菜批发</span><span>畜牧禽类</span><span>粮油米面</span><span>水果苗木</span><span>冷库水果</span><span>水果树苗</span><span>梨树苗</span></p></h4>
+                <div class="box">
+                <div class="msab">
+                    <img src="images/st1.jpg">
+                </div>
+                <ul>
+                    <li><img src="images/st2.gif"></li>
+                    <li><img src="images/st3.gif"></li>
+                    <li><img src="images/st4.gif"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="margin">
+            <div class="mark">
+                <h4 class="h4"><i></i><b>水果批发</b><p><span>生鲜水果</span><span>蔬菜批发</span><span>畜牧禽类</span><span>粮油米面</span><span>水果苗木</span><span>冷库水果</span><span>水果树苗</span><span>梨树苗</span></p></h4>
+                <div class="markt">
+                        <div class="ml">
+                            <h4><span>按照地区浏览</span></h4>
+                            <div class="mlb">
+                                <p><span><a>北京</a><a>上海</a><a>天津</a><a>重庆</a></span></p>
+                                <p><span><a>河北</a><a>山西</a><a>内蒙古</a></span></p>
+                                <p><span><a>辽林</a><a>吉林</a><a>黑龙江</a></span></p>
+                                <p><span><a>江苏</a><a>浙江</a><a>安徽</a><a>福建</a></span></p>
+                                <p><span><a>江西</a><a>山东</a><a>河南</a><a>湖北</a></span></p>
+                                <p><span><a>四川</a><a>贵州</a><a>云南</a><a>西藏</a></span></p>
+                            </div>
+                        </div>
+                        <div class="mr">
+                                <ul>
+                                    <li>
+                                    <div class="mtcr-da">
+                                    <div class="imgbox"><img src="images/sat1.gif"></div>
+                                    <p>惠州市东景农贸市场有限公司</p>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat2.gif"></div>
+                                        <p>广东江门市新会区水果食品批</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat3.gif"></div>
+                                        <p>广东佛山南海市里水水果批发</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat4.gif"></div>
+                                        <p>汕头水果中心市场</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat5.gif"></div>
+                                        <p>广东汕头农副产品批发中心市</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat6.gif"></div>
+                                        <p>东方市龙岳农贸综合市场</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat7.gif"></div>
+                                        <p>广州市江南果菜批发市场</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat8.gif"></div>
+                                        <p>广州市南源水果批发市场</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat9.gif"></div>
+                                        <p>越秀蔬菜批发市场</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="mtcr-da">
+                                        <div class="imgbox"><img src="images/sat10.gif"></div>
+                                        <p>深圳市宝安区西乡农贸批发市场</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                        </div>
+                   </div>
+            </div>
+    </div>
+    <div class="margin">
+        <div class="minf">
+            <div class="ml">
+                <h4><span>热门资讯</span></h4>
+                    <p><img src="images/mft1.gif"></p>
+                    <img src="images/mft2.gif" >
+                    <img src="images/mft3.gif">
+                </ul>
+            </div>
+            <div class="mc">
+                    <h4><span>水果学院</span><a>更多</a></h4>
+                    <ul>
+                        <li><img src="images/mft4.gif"><p>火龙果家庭种植方法</p></li>
+                        <li><img src="images/mft5.gif"><p>大棚内种植西瓜管理技术要点介绍</p></li>
+                        <li><img src="images/mft6.gif"><p>种植葡萄有哪些需要注意的事项</p></li>
+                        <li><img src="images/mft7.gif"><p>葡萄的修剪技术要点想丰产的看过了</p></li>
+                    </ul>
+            </div>
+            <div class="mr">
+                <div class="mrt">
+                        <h4><span>行业资讯</span><a>更多</a></h4>
+                        <p><a>口感一级棒的步骤诀窍玉米要煮多久</a></p>
+                        <p><a>口感一级棒的步骤诀窍玉米要煮多久</a></p>
+                        <p><a>口感一级棒的步骤诀窍玉米要煮多久</a></p>
+                        <p><a>口感一级棒的步骤诀窍玉米要煮多久</a></p>
+                </div>
+                <div class="mrb">
+                     <h4><span>水果养生</span><a>更多</a></h4>
+                     <p><a>品正宗水果茶百香果泡水的正确方法</a></p>
+                     <p><a>品正宗水果茶百香果泡水的正确方法</a></p>
+                     <p><a>品正宗水果茶百香果泡水的正确方法</a></p>
+                     <p><a>品正宗水果茶百香果泡水的正确方法</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="margin">
+        <div class="ency">
+                <h4><span>百科</span><p><a>仁果类</a><a>浆果类</a><a>坚果类</a><a class="t6">更多></a></p></h4>
+                <ul>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w1.jpg">
+                        </div>
+                        <p>核桃</p>
+                    </li>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w2.jpg">
+                        </div>
+                        <p>柿子</p>
+                    </li>
+                        <li>
+                    <div class="imgbox">
+                        <img src="images/w3.jpg">
+                    </div>
+                    <p>猕猴桃</p>
+                    </li>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w4.jpg">
+                        </div>
+                        <p>白草莓</p>
+                    </li>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w5.jpg">
+                        </div>
+                        <p>草莓</p>
+                    </li>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w6.jpg">
+                        </div>
+                        <p>桃子</p>
+                    </li>
+                    <li>
+                        <div class="imgbox">
+                            <img src="images/w7.jpg">
+                        </div>
+                        <p>章姬草莓</p>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <div class="margin">
+        <div class="cate">
+            <h4>友情链接:<a>复合耐磨板</a><a>挽回爱情</a><span>更多</span></h4>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="margin">
+        <h4><a>网站首页</a><a>关于我们</a><a>联系方式</a><a>使用协议</a><a>版权隐私</a><a>网站地图</a><a>排名推广</a><a>广告服务</a><a>积分换礼</a><a>网站留言</a><a>RSS订阅</a><a class="t7">违规举报</a></h4>
+        <p>(c)2008-2013 qqsgjy.comSYSTEM All Rights Reserve</p>
+    </div>
+</footer>
+</body>
+<script src="js/items.js"></script>
+<script src="js/ajax.1.js"></script>
+<script src="js/goods.js"></script>
+<script src="js/move.js"></script>
+<script>
+   //mt-r span的滚动
+   // 商品列表的渲染
+ class Goodlist{
+    constructor(){
+        this.ul=document.querySelector("main .mtg .mtcr ul");
+        // this.cont=document.getElementById("cont");
+        this.url="http://localhost/fruit/data/goods.json";
+        //数据渲染
+        this.init()
+        //添加事件
+        this.addEvent()
+    }
+    addEvent(){
+        console.log(this.ul)
+            var  that=this;
+            //事件委托
+            this.ul.onclick=function(eve){
+                var e=event||window.event;
+                var target=e.target||e.srcElement;
+                console.log(target.nodeName)
+                if(target.nodeName=="A"||target.nodeName=="P"||target.nodeName=="IMG"||target.nodeName=="DIV"){
+                if(target.nodeName=="DIV"){
+                    that.id=target.getAttribute("index");
+                }
+                if(target.nodeName=="P"){
+                    that.id=target.parentNode.parentNode.getAttribute("index");
+                }
+                if(target.nodeName=="IMG"){
+                    that.id=target.parentNode.parentNode.parentNode.getAttribute("index");
+                }
+                //   that.id=target.parentNode.getAttribute("index");//设置id完成后用于区分商品
+                  //存储商品的localstorage
+                  that.setData();
+                }
+            }
+        }
+        setData(){
+         this.goods=localStorage.getItem("goods");
+         if(this.goods){
+             this.goods=JSON.parse(this.goods)
+             var onoff=true;
+             for(var i=0;i<this.goods.length;i++){
+                 if(this.goods[i].id==this.id){
+                     this.goods[i].num++;
+                     onoff=false;
+                 }
+             }
+             if(onoff){
+                 this.goods.push({
+                     id:this.id,
+                     num:1
+                 })
+             }
+            }else{
+                this.goods=[{
+                    id:this.id,
+                    num:1
+                }]
+          }      
+          localStorage.setItem("goods",JSON.stringify(this.goods))
+  }
+    init(){
+        //拿数据
+        var that=this;
+        ajaxPost(
+            this.url,function(res){
+                // console.log(res)
+               that.res=JSON.parse(res);
+               that.display()
+            }
+        )
+    }
+    display(){
+        var str="";
+        for(var i=0;i<this.res.length;i++){
+            str+=`<li>
+                    <div class="mtcr-da" index="${this.res[i].goodsId}">
+                    <a href="detail.html">
+                    <p class="imgbox"><img src="${this.res[i].src}"></p>
+                    <p>${this.res[i].descr}</p>
+                    <span>￥：${this.res[i].price}</span><s>${this.res[i].discount}</s>
+                    </a></div>
+                  </li>`;
+            }
+        this.ul.innerHTML=str;
+    }
+}
+new Goodlist();
+
+   
+</script>
+</html>

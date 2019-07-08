@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select{margin: 0;padding: 0};
+    a{text-decoration: none;}
+    .margin{width: 1190px;margin: 0 auto;}
+    /* top */
+    li{list-style: none;}
+    a{text-decoration: none;}
+    #top{height: 30px;background: #eee;line-height: 30px;}
+    #top .l{float: left}
+    #top .l a{color: #666}
+    #top .l span{margin: 0 10px;color: #f47a11;}
+    #top .l :first-child{margin-left: 20px;}
+    #top .r{float: right;height: 25px;}
+    #top .r a{color: #666}
+    #top .r a{display: inline-block;padding:0 10px;overflow: hidden;}
+    #top .r a i{font-style: normal;display:inline-block;height: 20px;width: 20px;transform-origin:left center;transform:rotate(90deg);margin-left: 15px;overflow: hidden;}
+    #top a:hover{color: #f47a11;}
+    #top a:hover i{transform-origin:left 20px;transform:rotate(270deg);}
+    /* 显示和隐藏 */
+    #top .appear{height: 94px;background: #fff;position: absolute;right: 70px;top:30px;text-align: center;display:none;}
+    #top .appear a{display:block;padding: 0 20px; color: #000;}
+    /* header */
+    header{height:134px; }
+    header .l{width:390px;height:134px;float: left;}
+    header .l img{margin:38px 0 0 20px;}
+    header .c{width:510px;height:134px ;float: left;}
+    header .c .c-t{height: 30px;margin-top: 40px;}
+    header .c .box{width: 440px;border: 1px solid #ccc;float: left;position: relative;border-right: 0;}
+    header .c .box span{width: 103px;height: 26px;background: #fff;float: right;border-left: 1px solid #ccc;cursor: pointer;text-indent: 5px;}
+    header .c .box span i{float: right;font-style: normal;width: 30px;line-height: 26px;color: #bbb;cursor: pointer;}
+    header .c .box .txt{width: 336px;border: 0;outline: none;height: 26px;text-indent:30px;}
+    header .c .box::after{content:"";height:10px;width:9px;border-radius:50%;border:2px solid #000;position: absolute;left: 4px;top:7px;border-radius: 50%;}
+    header .c .box::before{content:"";width: 2px;height: 10px; background: #000;position: absolute;left: 18px;top:14px;transform:rotate(123deg);}
+    header .c .search{width:66px;float: left;height: 28px;border: 0;border: 1px solid #bf8d02;background: #feca29;outline: none;color: #954200;cursor: pointer;}
+    header .c .c-b a{color: #333;}
+    header .c .c-b a:hover{color: #f57a11;text-decoration: underline;}
+    header .c .sele{width: 96px;height: 234px;position: absolute;right: 0;top: 26px;border:1px solid #ccc;background: #fff;display: none;z-index: 1;}
+    header .c .sele li{padding: 2px 0 2px 10px; cursor: pointer;}
+    header .c .sele li:hover{color: #fa8d55;}
+    header .r{width:290px; height:134px;float: left;}
+    header .r img{width: 255px;height:122px;margin-left: 20px;}
+    nav{height: 45px;border-top: 1px solid #ddd;background: #009237;line-height: 45px;}
+    nav span{float:left;padding: 0 63px;color: #fff;}
+    nav ul{float: left;}
+    nav ul li{float: left; }
+    nav ul li a{padding:0 12px; ;border-right:1px solid #00702a;border-left:1px solid #01ab41;color: #fff;}
+    nav ul li .te{border-left:0;}
+    nav ul li:hover{background: #006a28; }
+    nav .tes:hover{background: #006a28;}
+    nav .te1{background: #0da944;}
+    main .at{height: 64px;line-height: 64px;border-bottom: 1px solid #ddd;}
+    main .at p{}
+    main .at p a{padding: 0 11px;cursor: pointer;}
+    main .at p a:hover{color: #f57a11;text-decoration: underline;}
+    main .ac{height: 490px;}
+    main .ac .l{float: left;width: 866px;height: 475px;}
+    main .ac .l h4 p{height: 65px;line-height: 65px;border: 1px solid #ddd;color: #006695;} 
+    main .ac .l{}
+    main .ac .l .lb{position: relative;width: 866px;height: 475px;margin: 0 auto;margin-top: 24px;}
+    main .ac .l .lb .cont{width: 335px;height:382px;position: absolute;}
+    main .ac .l .lb .cont .exhibit img{width: 320px;height: 240px;border: 6px solid #f3f3f3;}
+    main .ac .l .lb .cont .exhibit span{position: absolute;left: 0;top: 0;background: #ccc;opacity: 0.6;display: none;}
+    main .ac .l .lb .cont .exhibit p{width: 330px;height: 250px;position: absolute;z-index: 1;left: 0;top: 0; }
+    main .ac .l .lb .cont ul li{float: left;margin: 20px 0 0 32px; }
+    main .ac .l .lb .cont ul li img{width: 65px;height: 60px;border: solid #c0c0c0;}
+    main .ac .l .lb .cont ul li img:hover{border: 3px solid #f60;}
+    main .ac .l .box{width: 400px;height: 300px;border:1px solid #ccc;position: absolute;left: 368px;overflow: hidden;} 
+    main .ac .l .box img{width: 400px;height: 900px;} 
+    main .ac .l .lb .box img{width: 400px;position: absolute;height: 900px;}
+    main .ac .l .lb .cox{width: 405px;height:382px;float: left;margin-left: 33px;margin-left: 368px;}
+    main .ac .l .lb .cox p{height: 32px;line-height: 32px;}
+    main .ac .l .lb .cox p span{text-align: left;}
+    main .ac .l .lb .cox p .mtl{margin-left: 49px;}
+    main .ac .l .lb .cox p .mtl1{margin-left: 65px;}
+    main .ac .l .lb .cox p .mtl2{margin-left: 34px}
+    main .ac .l .lb .cox p input{width: 132px;height: 36px;font-size: 20px;border-radius: 5px;color: #fff;cursor: pointer;margin-top:54px; }
+    main .ac .l .lb .cox p #btn1{background:linear-gradient(to top,orangered,orange);border: 1px solid #f26c4f;}
+    main .ac .l .lb .cox p #btn2{background:linear-gradient(to top,#3b99d7,#97cff2);border: 1px solid #429bd5;margin-left:13px;}
+    main .ac .r{float: right;width: 300px;height: 475px;}
+    main .ac .r h4{height: 44px;border-top:2px solid #007aff;line-height: 44px;text-align: center;border-bottom: 1px solid #e2e2e2; }
+    main .ac .r ul{}
+    main .ac .r ul li{border-bottom: 1px solid #e2e2e2;}
+    main .ac .r ul li p{line-height: 32px;margin-left: 22px;}
+    main .ac .r ul li .te2{margin:19px 0 0 48px;}
+    main .ac .r ul li span{margin-right: 13px;color: #1b94d5;}
+    main .ac .r ul li a{}
+    main .mc{}
+    main .mc .mct{height: 1440px;}
+    main .mc .mct h4{height: 46px;border-bottom:1px solid #ddd;}
+    main .mc .mct p{width: 1150px;margin-left:36px;line-height: 32px;margin-top:44px;}
+    main .mc .mct b{display: block;font-weight:700;}
+    main .mc .mct .te3{margin-left: 500px;}
+    main .mc .mct span{display: block;line-height: 32px;}
+    main .mc .mcb{}
+    main .mc .mcb h3{width: 1150px;margin-left:36px;height: 50px;border-bottom:1px solid #ddd;line-height: 50px; }
+    main .mc .mcb h3 span{float: right;font-size: 14px;}
+    main .mc .mcb img{margin: 48px 0 0 28px;}
+    footer{height:85px;margin-top:15px;text-align: center;}
+    footer h4{height: 48px;line-height: 48px;background: #eee;text-align: center;}
+    footer h4 a{padding:0 10px;border-right:1px solid #906690;}
+    footer h4 a:hover{text-decoration: underline;color:#f57a11;cursor: pointer;}
+    footer h4 .t7{border-right:0;}
+    footer p{margin-top:20px;}
+    </style>
+    </head>
+<body>
+<div id="top" >
+    <div class="margin">
+    <div class="l">
+        <span class="first">您好，欢迎来到水果交易全新改版！</span><i></i><a href="#">会员登录</a><span>|</span><a href="#">免费注册</a><span>|</span><a href="#">忘记密码</a>
+    </div>
+    <div class="r">
+        <a href="#">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
+    </div> 
+    <div class="appear">
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+    </div>
+</div>
+</div>
+<!-- header -->
+<header>
+    <div class="margin">
+        <div class="l">
+            <img src="images/logo.gif" >
+        </div>
+        <div class="c">
+            <div class="c-t">
+                <div class="box">
+                <input type="text" placeholder="请输入关键字" class="txt"/>
+                <span class="sea"><i>V</i></span>
+                <!-- 下拉框 -->
+                <ul class="sele">
+                        <li>水果零售</li>
+                        <li>水果批发</li>
+                        <li>水果求购</li>
+                        <li>价格行情</li>
+                        <li>水果资讯</li>
+                        <li>批发市场</li>
+                        <li>水果供应商</li>
+                        <li>百科</li>
+                        <li>水果学院</li>
+                    </ul>
+                </div>
+                <input type="button" value="搜索" class="search">
+            </div>
+            <div class="c-b">
+                <span>推广热搜：</span>
+                <a href="#">苹果</a>
+                <a href="#">葡萄</a>
+                <a href="#">西瓜</a>
+                <a href="#">脐橙</a>
+                <a href="#">桔子</a>
+                <a href="#">草莓</a>
+                <a href="#">冬枣</a>
+                <a href="#">荔枝</a>
+                <a href="#">毛桃</a>
+                <a href="#">水果</a>
+            </div>
+        </div>
+        <div class="r"><img src="images/t1.jpg"></div>
+    </div>
+</header>
+<nav>
+    <div class="margin">
+        <span class="te1">水果市场</span>
+        <ul class="n-li"> 
+                <li><a href="#" class="te">水果零售</a></li>
+                <li><a href="#">水果批发</a></li>
+                <li><a href="#">水果求购</a></li>
+                <li><a href="#">价格行情</a></li>
+                <li><a href="#">水果资讯</a></li>
+                <li><a href="#">批发市场</a></li>
+                <li><a href="#">水果供应商</a></li>
+                <li><a href="#">百科</a></li>
+                <li><a href="#">水果学院</a></li>
+            </ul>
+        <span class="tes">手机交易</span>
+    </div>
+</nav>
+<main>
+<div class="margin">
+<div class="at">
+<p></p><a>首页</a><sapn>></sapn><a>水果批发</a><sapn>></sapn><a>冷库水果</a><sapn>></sapn><a>冷库水果</a></p>
+</div>
+<div class="ac">
+    <div class="l">
+        <h4><p>嘉味莲马来西亚猫山王榴莲</p></h4>
+        <div class="lb">
+            <div class="cont">
+                <div class="exhibit">
+                    <img src="images/big 1.jpg" />
+                    <span></span>
+                
+                    <p></p>
+                </div>
+                <ul>
+                    <li><img src="images/small 1.jpg"/></li>
+                    <li><img src="images/small 2.jpg"/></li>
+                    <li><img src="images/small 3.jpg"/></li>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="images/small 1.jpg"/>
+            </div>
+            <div class="cox">
+                <p>品牌：<span class="mtl1">嘉味莲</span></p>
+                <p>单价：<span class="mtl1">100.00元/kg</span></p>
+                <p>起订：<span class="mtl1">10kg</span></p>
+                <p>供货总量：<span class="mtl2">10000kg</span></p>
+                <p>所在地：<span class="mtl">10000kg</span></p>
+                <p>有效期至：<span class="mtl2">长期有效</span></p>
+                <p>最后更新：<span class="mtl2">2019-06-06 15:43</span></p>
+                <p>浏览次数：<span class="mtl2">143</span></p>
+                <p><input type="button"value="立即购买" id="btn1"/><input type="button" value="加入购物车" id="btn2"/></p>
+            </div>
+        </div>
+    </div>
+    <div class="r">
+        <h4>公司基本资料信息</h4>
+        <ul>
+            <li><p class="te2">北京闻跃进出口贸易有限公司</p></li>
+            <li><p>已缴纳0.00元保证金</p><p><span>联系人</span><a>李伯龙(先生)</a></p></li>
+            <li><p><span>会员</span><a>[当前离线]</a><a>[加为商友]</a><a>[发送信件]</a></p></li>
+            <li><p><span>电话</span><a>15120083537</a></p></li>
+            <li><p><span>手机</span><a>15120083537</a></p></li>
+            <li><p><span>地区</span><a>北京</a></p></li>
+            <li><p><span>地址</span><a>北京市丰台区新发地</a></p></li>
+        </ul>
+    </div>
+    </div>
+</div>
+</div>
+<div class="margin">
+    <div class="mc">
+        <div class="mct">
+        <h4>详细说明</h4>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;“猫山王”农业部注册编号为D197：马来西亚人将熟透后自己从树上掉到地下，但没有裂开的完整榴莲，送到一只困在笼里的“猫山”面前，由它闻香鉴别优劣，如果“猫山”闻完后兴奋不已，这榴莲就是极品的“猫山王”。猫山王要遵循“瓜熟蒂落”的自然规律，树上采摘或者开壳的猫山王是不能食用的，所以在中国很难食用到新鲜猫山王。“猫山”是马来西亚musang的音译，musang指的是果子狸。果子狸嗅觉灵敏，善于寻觅发现上佳榴莲，所以人们用“猫山”给上佳的榴莲命名，而“猫山王”自是榴莲佳品中的国王。真正让其名声鹊起源于澳门赌王StanlyHo（何鸿燊），他曾经派人驾驶私人飞机从新加坡运了100颗“猫山王”榴莲回HK，请李嘉诚和其他生意大亨大吃 榴莲，被当时香港，澳门，新马一带的媒体大肆报道，一夜之间猫山王名声大噪，其知名度盖过其他所有榴莲品种</p>
+        <p><b>按产地分</b>&nbsp;&nbsp;&nbsp;&nbsp;虽然在同一片产地，按照地势高低起伏，还可分为山顶货和平原货。山顶上阳光照射充足，空气好，雨水足，榴莲树都被种植在斜坡上，因此雨水不会被聚集于根部，而是顺势流下，所以山顶上所产的猫山王榴莲的果肉偏干，果肉表皮干皱，味道上甘甜微苦甚至有酒味。平原一说其实是相对的，因为山顶较高，其他地方自然都 成了平原，所产的猫山王果肉没有那么干，味道上有的会没有苦味和酒味，而只有甘甜，但并不是说所有的 都没苦味。</p>
+        <p><b>按树龄分</b>&nbsp;&nbsp;&nbsp;&nbsp;树龄的不同，产出的榴莲在香味上和口味上会有不同。一般10年左右或者10多年的果树被称为新树，所产的猫山王榴莲果壳颜色为绿色，刺头也为绿色（这种绿不会像越南猫那般青绿），随着树龄的增加，这种颜色会向深色转变，可以是深绿、褐色甚者土灰色。20年以上树龄的统称为老树。所谓的“金凤”通常指的就是，种植在山顶40年以上老树结的猫山王榴莲果实，这种极品可遇而不可求。</p>
+        <p><b>按产地分</b>&nbsp;&nbsp;&nbsp;&nbsp;虽然在同一片产地，按照地势高低起伏，还可分为山顶货和平原货。山顶上阳光照射充足，空气好，雨水足，榴莲树都被种植在斜坡上，因此雨水不会被聚集于根部，而是顺势流下，所以山顶上所产的猫山王榴莲的果肉偏干，果肉表皮干皱，味道上甘甜微苦甚至有酒味。平原一说其实是相对的，因为山顶较高，其他地方自然都 成了平原，所产的猫山王果肉没有那么干，味道上有的会没有苦味和酒味，而只有甘甜，但并不是说所有的 都没苦味。</p>
+        <p><b>特点</b>1、猫山王榴莲个体较小，通常在1.5-2.5kg左右。果皮多为绿色。在果实底部会有一个明显的“五角星”标记，这是猫山王榴莲所独有的，当然有的极品猫山王可能呈现出“六角星”或者没有这个图形。<span>2、猫山王榴莲果肉，色泽金黄而明亮。口感细腻、纤维少、微苦，味觉层次过度自然。</span><span>3、猫山王榴莲果核相对较小，通常为成人拇指大小。对于果核有一个非常贴切的形容，叫做“吮指”</span><span>目前，中国是禁止马来西亚鲜果榴莲进口，目前国内极为少见，现本公司全面开设马来西亚冷冻榴莲进口合做（液氮冷冻）合作伙伴前期推广。</span><span>本品为液氮冷冻，更快的减少冷冻对榴莲果肉的损伤，更好的保存了榴莲的口味，与其他速冻不同的是大大缩短了冷冻过程对果肉的损伤。</span><span>液氮冷冻加真空包装，更好的保存水果的口味</span></p>
+        <p><b class="te3">招商说明</b>为保护合作伙伴利益最大化，减少竞争压力，现仅面向全国招收全国各省直辖市代理，每个区仅招一家独家代理。（本品以打通线上渠道，可与各合作商共同供仓）<span>合作方式：单次进货量50箱（20斤/箱/5-6枚）可开具正规授权和冷冻榴莲进口票。（此种合作方式可直接宣传马来西亚进口猫山王榴莲）</span><span>提货方式：将货物送达全国各大省会城市及直辖市进行提货，（也可按客户需要进行指定收货点进行配送，但限于榴莲运输过程必须全程冷链，本产品不适合无冷链长途运输的方式）。</span><span>特别提醒：本产品销售过程必须全程冷藏保鲜，合作伙伴必须具备零度以下冰库保存条件以便进行储存，（具备商超大型冰柜亦可）在零下18度的冰库中本产品可以保存2年，出库后6-12小时内经自然解冻后口感最佳。</span><span>另供：猫山王、红霞、101、D24等榴莲鲜果、冻果、果肉、榴莲月饼、榴莲冰淇淋、榴莲蛋糕等。</span><span>有意伙伴可直接微信联系151280083537</span></p>
+        </div>
+        <div class="mcb">
+            <h3>相关评论<span>0条</span></h3>
+            <img src="images/p1.gif">
+            <img src="images/p2.jpg">
+        </div>
+    </div>
+</div>
+</main>
+<footer>
+    <div class="margin">
+        <h4><a>网站首页</a><a>关于我们</a><a>联系方式</a><a>使用协议</a><a>版权隐私</a><a>网站地图</a><a>排名推广</a><a>广告服务</a><a>积分换礼</a><a>网站留言</a><a>RSS订阅</a><a class="t7">违规举报</a></h4>
+        <p>(c)2008-2013 qqsgjy.comSYSTEM All Rights Reserve</p>
+    </div>
+</footer>
+</body>
+<script src="js/items.js"></script>
+<script src="js/ajax.1.js"></script>
+<script>
+   class Render{
+    constructor(){
+            //完成数据的渲染
+            this.ol=document.querySelector("main .ac .l");
+            this.url="data/goods.json";
+            this.init()
+        }
+    init(){
+        var that=this;
+        ajaxPost(this.url,function(res){
+            that.res=JSON.parse(res);
+            that.getData();
+        })
+        }
+    getData(){
+        this.goods=localStorage.getItem("goods")?JSON.parse(localStorage.getItem("goods")):[];
+        console.log(this.goods)
+        console.log(this.res)
+        this.display()
+    } 
+    display(){
+        var str="";
+        for(var i=0;i<this.res.length;i++){
+            for(var j=0;j<this.goods.length;j++){
+                if(this.res[i].goodsId==this.goods[j].id){
+                    str+=`
+                    <h4><p>${this.res[i].descr}</p></h4>
+                    <div class="lb">
+                        <div class="cont">
+                            <div class="exhibit">
+                                <img src="${this.res[i].src}" />
+                                <span></span>
+                                <p></p>
+                            </div>
+                            <ul>
+                                <li><img src="${this.res[i].src}"/></li>
+                                <li><img src="${this.res[i].src}"/></li>
+                                <li><img src="${this.res[i].src}"/></li>
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <img src="${this.res[i].src}"/>
+                        </div>
+                        <div class="cox">
+                            <p>品牌：<span class="mtl1">嘉味莲</span></p>
+                            <p>单价：<span class="mtl1">100.00元/kg</span></p>
+                            <p>起订：<span class="mtl1">10kg</span></p>
+                            <p>供货总量：<span class="mtl2">10000kg</span></p>
+                            <p>所在地：<span class="mtl">10000kg</span></p>
+                            <p>有效期至：<span class="mtl2">长期有效</span></p>
+                            <p>最后更新：<span class="mtl2">2019-06-06 15:43</span></p>
+                            <p>浏览次数：<span class="mtl2">143</span></p>
+                            <p><input type="button"value="立即购买" id="btn1"/><input type="button" value="加入购物车" id="btn2"/></p>
+                        </div>`
+                }
+            }
+        }
+        this.ol.innerHTML=str;
+        }
+   }
+
+    new Render()
+
+
+
+  function Exhibit(){
+    this.exhibit=document.querySelector(".exhibit");
+    this.exhibitImg=document.querySelector(".exhibit img");
+    this.ul=document.querySelector(".ac ul");
+    this.aimg=this.ul.getElementsByTagName("img");
+    this.span=document.querySelector(".exhibit span");
+    this.box=document.querySelector(".ac .box");
+    this.bimg=document.querySelector(".ac .box img");
+    this.init()
+   }
+   Exhibit.prototype.init=function(){
+       for(var i=0;i<this.aimg.length;i++){
+           var that=this;
+           this.aimg[i].onmouseover=function(){
+           that.exhibitImg.src=this.src.replace(/small/,"big");
+           that.bimg.src=this.src.replace(/small/,"big");
+           }
+       }
+    this.boost();
+    }
+   Exhibit.prototype.boost=function(){
+ 
+    //计算span的尺寸
+    console.log(this.bimg.offsetHeight)
+    //右边大图的宽高除以右边div的宽高得到比例
+    var w=this.bimg.offsetWidth/this.box.offsetWidth;
+    var h=this.bimg.offsetHeight/this.box.offsetHeight;
+    console.log(h)
+    //小框的宽度与比例相除得到span的宽度
+    console.log(this.exhibit.offsetHeight)
+    this.span.style.width=(this.exhibit.offsetWidth/w)*1/4+"px";
+    // this.span.style.width=40+"px";
+    // this.span.style.height=this.exhibit.offsetHeight/h+"px";
+    this.span.style.height=60+"px";
+    console.log(this.span.style.height)
+    this.addEvent();
+   }
+   Exhibit.prototype.addEvent=function(){
+       var that=this;
+       //进入
+       this.exhibit.addEventListener("mouseover",function(){
+        that.over();
+       })
+       //离开
+       this.exhibit.addEventListener("mouseout",function(){
+        that.out();
+       })
+       //离开
+       this.exhibit.addEventListener("mousemove",function(e){
+        var e=event||window.event;
+        that.move(e);
+       })
+       }
+    Exhibit.prototype.over=function(){
+        this.span.style.display="block";
+        this.box.style.display="block";
+    }
+    Exhibit.prototype.out=function(){
+        this.span.style.display="none";
+        this.box.style.display="none";
+    }
+    Exhibit.prototype.move=function(e){
+        //span跟随移动
+        //利用尺寸的计算
+        //利用布局解决
+        var l=e.offsetX-this.span.offsetWidth/2;
+        var t=e.offsetY-this.span.offsetHeight/2; 
+        if(l<0)l=0;
+        if(t<0)t=0;
+        if(l>this.exhibit.offsetWidth-this.span.offsetWidth)l=this.exhibit.offsetWidth-this.span.offsetWidth;
+        if(t>this.exhibit.offsetHeight-this.span.offsetHeight)t=this.exhibit.offsetHeight-this.span.offsetHeight-3;
+        //span的移动
+        this.span.style.left=l+"px";
+        this.span.style.top=t+"px";
+        //根据比例移动大图
+        //计算比例
+        var x=l/(this.exhibit.offsetWidth-this.span.offsetWidth)*1/28;
+        var y=t/(this.exhibit.offsetHeight-this.span.offsetHeight)*6/9;
+      
+        this.bimg.style.left=-x*(this.bimg.offsetWidth-this.box.offsetWidth)+"px";
+        this.bimg.style.top=-y*(this.bimg.offsetHeight-this.box.offsetHeight)+"px";
+    }
+   window.onload=function(){
+      new Exhibit();
+   }
+
+</script>
+</html>

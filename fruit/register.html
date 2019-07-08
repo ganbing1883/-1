@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select{margin: 0;padding: 0};
+    a{text-decoration: none;}
+    .margin{width: 1190px;margin: 0 auto;}
+    /* top */
+    li{list-style: none;}
+    a{text-decoration: none;}
+    #top{height: 30px;background: #eee;line-height: 30px;}
+    #top .l{float: left}
+    #top .l a{color: #666}
+    #top .l span{margin: 0 10px;color: #f47a11;}
+    #top .l :first-child{margin-left: 20px;}
+    #top .r{float: right;height: 25px;}
+    #top .r a{color: #666}
+    #top .r a{display: inline-block;padding:0 10px;overflow: hidden;}
+    #top .r a i{font-style: normal;display:inline-block;height: 20px;width: 20px;transform-origin:left center;transform:rotate(90deg);margin-left: 15px;overflow: hidden;}
+    #top a:hover{color: #f47a11;}
+    #top a:hover i{transform-origin:left 20px;transform:rotate(270deg);}
+    /* 显示和隐藏 */
+    #top .appear{height: 94px;background: #fff;position: absolute;right: 70px;top:30px;text-align: center;display:none;}
+    #top .appear a{display:block;padding: 0 20px; color: #000;}
+    /* header */
+    header{height:134px; }
+    header .l{width:390px;height:134px;float: left;}
+    header .l img{margin:38px 0 0 20px;}
+    header .c{width:510px;height:134px ;float: left;}
+    header .c .c-t{height: 30px;margin-top: 40px;}
+    header .c .box{width: 440px;border: 1px solid #ccc;float: left;position: relative;border-right: 0;}
+    header .c .box span{width: 103px;height: 26px;background: #fff;float: right;border-left: 1px solid #ccc;cursor: pointer;text-indent: 5px;}
+    header .c .box span i{float: right;font-style: normal;width: 30px;line-height: 26px;color: #bbb;cursor: pointer;}
+    header .c .box .txt{width: 336px;border: 0;outline: none;height: 26px;text-indent:30px;}
+    header .c .box::after{content:"";height:10px;width:9px;border-radius:50%;border:2px solid #000;position: absolute;left: 4px;top:7px;border-radius: 50%;}
+    header .c .box::before{content:"";width: 2px;height: 10px; background: #000;position: absolute;left: 18px;top:14px;transform:rotate(123deg);}
+    header .c .search{width:66px;float: left;height: 28px;border: 0;border: 1px solid #bf8d02;background: #feca29;outline: none;color: #954200;cursor: pointer;}
+    header .c .c-b a{color: #333;}
+    header .c .c-b a:hover{color: #f57a11;text-decoration: underline;}
+    header .c .sele{width: 96px;height: 234px;position: absolute;right: 0;top: 26px;border:1px solid #ccc;background: #fff;display: none;z-index: 1;}
+    header .c .sele li{padding: 2px 0 2px 10px; cursor: pointer;}
+    header .c .sele li:hover{color: #fa8d55;}
+    header .r{width:290px; height:134px;float: left;}
+    header .r img{width: 255px;height:122px;margin-left: 20px;}
+    nav{height: 45px;border-top: 1px solid #ddd;background: #009237;line-height: 45px;}
+    nav span{float:left;padding: 0 63px;color: #fff;}
+    nav ul{float: left;}
+    nav ul li{float: left; }
+    nav ul li a{padding:0 12px; ;border-right:1px solid #00702a;border-left:1px solid #01ab41;color: #fff;}
+    nav ul li .te{border-left:0;}
+    nav ul li:hover{background: #006a28; }
+    nav .tes:hover{background: #006a28;}
+    nav .te1{background: #0da944;}
+    main{height: 406px;}
+    main .login{width: 342px;border: 1px solid #e5e5e5;margin:52px auto;border-radius: 5px;}
+    main .login h4{height: 48px;line-height: 48px;border-bottom:3px solid #e5e5e5; }
+    main .login h4 span{padding: 14px 25px;cursor: pointer; }
+    main .login h4 span:hover{border-bottom:3px solid #666;color:#f57a11;text-decoration: underline;}
+    main .account{height: 255px;text-align: center;overflow: hidden;}
+    main .account p{margin-top: 19px;}
+    main .account p input{width: 298px;height: 41px;border: 1px solid #e5e5e5;text-indent: 10px;border-radius: 5px;}
+    main .account p .btn{background: #007aff;border-radius: 5px;font-size: 16px;color: #fff; }
+    main .account p a{padding: 0 9px;color:#007aff;}
+    main .account p .te8{border-right: 1px solid #007aff;}
+    main .mes{height: 314px;display: none;overflow: hidden;text-align: left;}
+    main .mes p{margin-top: 19px;margin-left:20px;}
+    main .mes p .txt1{width: 298px;height: 41px;border: 1px solid #e5e5e5;text-indent: 10px;border-radius: 5px;}
+    main .mes p .txt2{width: 140px;height: 42px;border: 1px solid #e5e5e5;text-indent: 10px;}
+    main .mes p span{display:inline-block;width: 104px;height: 32px;margin-left: 10px;}
+    main .mes p .txt3{width: 140px;height: 42px;border: 1px solid #e5e5e5;text-indent: 10px;}
+    main .mes p .btn1{width: 298px;height: 41px;border: 1px solid #e5e5e5;background: #007aff;border-radius: 5px;font-size: 16px;color: #fff; }
+    main .mes p a{color:#007aff;cursor: pointer;}
+    main .mes p a:hover{color:#f57a11; }
+    main .regis{width: 340px;margin: 50px auto;border: 3px solid #e5e5e5;border-radius:5px; }
+    main #b{margin-top: 20px;}
+    main #b label{width: 300px;display:block;height: 40px;font-size: 12px;margin-left: 10px;overflow: hidden;line-height: 40px;}
+    main #b label input{float: left;width: 170px;height: 24px;}
+    main #b label:first-child input{text-indent: 20px;}
+    main #b label:nth-child(2) input{text-indent: 20px;background: url(images/t2.gif) no-repeat 3px;border: none;border: 1px solid #ccc;}
+    main #b label:nth-child(3) input{text-indent: 20px;background: url(images/t3.gif) no-repeat 3px;border: none;border: 1px solid #ccc;}
+    main #b label:nth-child(4) input{text-indent: 20px;background: url(images/t2.gif) no-repeat 3px;border:none;border:1px solid #ccc;}
+    main #b label:nth-child(5) input{text-indent: 10px;background: url(images/t3.gif) no-repeat 3px;border: none;border:1px solid #ccc;}
+    main #b label .btn{background: #007aff;color: #fff;border: 0;}
+    footer{height:85px;margin-top:15px;text-align: center;}
+    footer h4{height: 48px;line-height: 48px;background: #eee;text-align: center;}
+    footer h4 a{padding:0 10px;border-right:1px solid #906690;}
+    footer h4 a:hover{text-decoration: underline;color:#f57a11;cursor: pointer;}
+    footer h4 .t7{border-right:0;}
+    footer p{margin-top:20px;}
+    </style>
+</head>
+<body>
+<div id="top" >
+        <div class="margin">
+        <div class="l">
+            <span class="first">您好，欢迎来到水果交易全新改版！</span><i></i><a href="#">会员登录</a><span>|</span><a href="#">免费注册</a><span>|</span><a href="#">忘记密码</a>
+        </div>
+        <div class="r">
+            <a href="#">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
+        </div> 
+        <div class="appear">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+        </div>
+        </div>
+    </div>
+    <!-- header -->
+    <header>
+        <div class="margin">
+            <div class="l">
+                <img src="images/logo.gif" >
+            </div>
+            <div class="c">
+                <div class="c-t">
+                    <div class="box">
+                    <input type="text" placeholder="请输入关键字" class="txt"/>
+                    <span class="sea"><i>V</i></span>
+                    <!-- 下拉框 -->
+                    <ul class="sele">
+                            <li>水果零售</li>
+                            <li>水果批发</li>
+                            <li>水果求购</li>
+                            <li>价格行情</li>
+                            <li>水果资讯</li>
+                            <li>批发市场</li>
+                            <li>水果供应商</li>
+                            <li>百科</li>
+                            <li>水果学院</li>
+                        </ul>
+                    </div>
+                    <input type="button" value="搜索" class="search">
+                </div>
+                <div class="c-b">
+                    <span>推广热搜：</span>
+                    <a href="#">苹果</a>
+                    <a href="#">葡萄</a>
+                    <a href="#">西瓜</a>
+                    <a href="#">脐橙</a>
+                    <a href="#">桔子</a>
+                    <a href="#">草莓</a>
+                    <a href="#">冬枣</a>
+                    <a href="#">荔枝</a>
+                    <a href="#">毛桃</a>
+                    <a href="#">水果</a>
+                </div>
+            </div>
+            <div class="r"><img src="images/t1.jpg"></div>
+        </div>
+    </header>
+    <nav>
+        <div class="margin">
+            <span class="te1">水果市场</span>
+            <ul class="n-li"> 
+                    <li><a href="#" class="te">水果零售</a></li>
+                    <li><a href="#">水果批发</a></li>
+                    <li><a href="#">水果求购</a></li>
+                    <li><a href="#">价格行情</a></li>
+                    <li><a href="#">水果资讯</a></li>
+                    <li><a href="#">批发市场</a></li>
+                    <li><a href="#">水果供应商</a></li>
+                    <li><a href="#">百科</a></li>
+                    <li><a href="#">水果学院</a></li>
+                </ul>
+            <span class="tes">手机交易</span>
+        </div>
+    </nav>
+<main>
+    <div class="margin">
+        <div class="regis">
+            <form id="b">
+                <label><input type="text" placeholder="用户名"/><span class="te"></span></label>
+                <label><input type="password" placeholder="密码"/><p></p></label>
+                <label><input type="password"placeholder="再次输入密码"/><p></p></label>
+                <label><input type="text" placeholder="姓名"/><p></p></label>
+                <label><input type="text"placeholder="身份证"/><p></p></label>
+                <label class="little"><input type="text" placeholder="请输入验证码"class="veri"/><span class="bigcode"></span><a>换一张</a></label>
+                <label class="display"><span></span></label>
+                <label><input type="button" value="注册" class="btn"/></label>
+            </form>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="margin">
+        <h4><a>网站首页</a><a>关于我们</a><a>联系方式</a><a>使用协议</a><a>版权隐私</a><a>网站地图</a><a>排名推广</a><a>广告服务</a><a>积分换礼</a><a>网站留言</a><a>RSS订阅</a><a class="t7">违规举报</a></h4>
+        <p>(c)2008-2013 qqsgjy.comSYSTEM All Rights Reserve</p>
+    </div>
+</footer>
+</body>
+<script src="js/public.js"></script>
+<script>
+
+// 注册验证
+class regis{
+    constructor(){
+        this.oinput2=document.querySelectorAll("#b input");
+        this.ospan=document.querySelectorAll(" #b span");
+        this.op=document.querySelectorAll("#b p");
+        this.oa=document.querySelectorAll("#b a");
+        this.init()
+    }
+    init(){
+        var that=this;
+        this.oinput2[1].onblur=function(){
+                    //验证密码强度
+                if(that.oinput2[1].value==""){
+                    that.op[0].innerHTML="密码不能为空！"
+                    return;
+                }  
+            var str=that.oinput2[1].value;
+            if(str.length<6){
+                that.op[0].innerHTML="请输入6~16位数的密码";
+                return;
+            }
+            var m=0;
+            var i=0;
+            var a=0;
+            var reg=/^\d{6,18}$/;//判断纯数字
+            var reg1=/^[a-zA-Z]{6,18}$/;//判断纯字母
+            var reg2=/^\w{6,18}$/ //判断纯特殊字符
+            if(reg.test(that.oinput2[1].value)){
+                m=0;
+            }else{m=1;}
+            if(reg1.test(that.oinput2[1].value)){
+                i=0;
+            }else{i=1;}
+            if(reg2.test(that.oinput2[1].value)){
+                a=0;
+            }else{a=1;}
+            var s=m+i+a;
+            switch(m+i+a){
+                case 0: that.op[0].innerHTML="密码强度弱";break;
+                case 1: that.op[0].innerHTML="密码强度弱";break;
+                case 2: that.op[0].innerHTML="密码强度中";break;
+                case 3: that.op[0].innerHTML="密码强度强";break;
+            }
+            window.str=str;
+        }
+//重复密码验证
+this.oinput2[2].onblur=function(){
+    if(that.oinput2[2].value==""){
+        that.op[1].innerHTML="密码不能为空!";
+        return;
+    }
+    console.log(that.oinput2[2].value)
+if(that.oinput2[2].value==window.str){
+    that.op[1].innerHTML="";
+}else{
+    that.op[1].innerHTML="密码不一致!";
+}
+}
+//姓名的验证
+that.oinput2[3].onblur=function(){
+    if(that.oinput2[3].value==""){
+        that.op[2].innerHTML="姓名不能为空!";
+        return;
+    }
+    var reg=/^[\u4e00-\u9fa5]{2,4}$/;
+    if(reg.test(that.oinput2[3].value)){
+        that.op[2].innerHTML="";
+    }else{
+        that.op[2].innerHTML="请输入真实姓名"
+    }
+}
+//身份证的验证
+this.oinput2[4].onblur=function(){
+   if(that.oinput2[4].value==""){
+    that.op[3].innerHTML="身份证号不能为空";
+       return;
+   }
+   var reg=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+   if(reg.test(that.oinput2[4].value)){
+    that.op[3].innerHTML="";
+    that.op[3].innerHTML="身份证号正确";
+   }else{
+    that.op[3].innerHTML="身份证号不符合";
+   }
+}
+//随机验证码
+var code=vericode();
+this.ospan[1].innerHTML=code;
+this.ospan[1].style.color=randomColor();
+//点击切换验证码
+this.oa[0].onclick=function(){
+ var code=vericode();
+ that.ospan[1].innerHTML=code;
+ that.ospan[1].style.color=randomColor();
+window.code=code;
+return;
+}
+//验证验证码
+this.oinput2[5].onblur=function(){
+   console.log(that.oinput2[5].value)
+   console.log(code)
+if(that.oinput2[5].value==""){
+    that.ospan[2].innerHTML="验证码不能为空！"
+    return;
+}
+if(that.oinput2[5].value==code){
+    that.ospan[2].innerHTML="";
+}else{
+    that.ospan[2].innerHTML="验证码错误";
+}
+}
+    }
+    }
+
+new regis();
+
+
+</script>
+</html>
+<body>
+    
+</body>
+</html>

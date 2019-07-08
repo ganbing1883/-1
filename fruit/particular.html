@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select{margin: 0;padding: 0};
+    a{text-decoration: none;}
+    .margin{width: 1190px;margin: 0 auto;}
+    /* top */
+    li{list-style: none;}
+    a{text-decoration: none;}
+    #top{height: 30px;background: #eee;line-height: 30px;}
+    #top .l{float: left}
+    #top .l a{color: #666}
+    #top .l span{margin: 0 10px;color: #f47a11;}
+    #top .l :first-child{margin-left: 20px;}
+    #top .r{float: right;height: 25px;}
+    #top .r a{color: #666}
+    #top .r a{display: inline-block;padding:0 10px;overflow: hidden;}
+    #top .r a i{font-style: normal;display:inline-block;height: 20px;width: 20px;transform-origin:left center;transform:rotate(90deg);margin-left: 15px;overflow: hidden;}
+    #top a:hover{color: #f47a11;}
+    #top a:hover i{transform-origin:left 20px;transform:rotate(270deg);}
+    /* 显示和隐藏 */
+    #top .appear{height: 94px;background: #fff;position: absolute;right: 70px;top:30px;text-align: center;display:none;}
+    #top .appear a{display:block;padding: 0 20px; color: #000;}
+    /* header */
+    header{height:134px; }
+    header .l{width:390px;height:134px;float: left;}
+    header .l img{margin:38px 0 0 20px;}
+    header .c{width:510px;height:134px ;float: left;}
+    header .c .c-t{height: 30px;margin-top: 40px;}
+    header .c .box{width: 440px;border: 1px solid #ccc;float: left;position: relative;border-right: 0;}
+    header .c .box span{width: 103px;height: 26px;background: #fff;float: right;border-left: 1px solid #ccc;cursor: pointer;text-indent: 5px;}
+    header .c .box span i{float: right;font-style: normal;width: 30px;line-height: 26px;color: #bbb;cursor: pointer;}
+    header .c .box .txt{width: 336px;border: 0;outline: none;height: 26px;text-indent:30px;}
+    header .c .box::after{content:"";height:10px;width:9px;border-radius:50%;border:2px solid #000;position: absolute;left: 4px;top:7px;border-radius: 50%;}
+    header .c .box::before{content:"";width: 2px;height: 10px; background: #000;position: absolute;left: 18px;top:14px;transform:rotate(123deg);}
+    header .c .search{width:66px;float: left;height: 28px;border: 0;border: 1px solid #bf8d02;background: #feca29;outline: none;color: #954200;cursor: pointer;}
+    header .c .c-b a{color: #333;}
+    header .c .c-b a:hover{color: #f57a11;text-decoration: underline;}
+    header .c .sele{width: 96px;height: 234px;position: absolute;right: 0;top: 26px;border:1px solid #ccc;background: #fff;display: none;z-index: 1;}
+    header .c .sele li{padding: 2px 0 2px 10px; cursor: pointer;}
+    header .c .sele li:hover{color: #fa8d55;}
+    header .r{width:290px; height:134px;float: left;}
+    header .r img{width: 255px;height:122px;margin-left: 20px;}
+    nav{height: 45px;border-top: 1px solid #ddd;background: #009237;line-height: 45px;}
+    nav span{float:left;padding: 0 63px;color: #fff;}
+    nav ul{float: left;}
+    nav ul li{float: left; }
+    nav ul li a{padding:0 12px; ;border-right:1px solid #00702a;border-left:1px solid #01ab41;color: #fff;}
+    nav ul li .te{border-left:0;}
+    nav ul li:hover{background: #006a28; }
+    nav .tes:hover{background: #006a28;}
+    nav .te1{background: #0da944;}
+    main{height: 480px;}
+    main .mtcr{width: 1020px;}
+    main .mtcr ul{margin: 20px 0;}
+    main .mtcr ul li{width: 200px;height: 229px;border: 1px solid #ddd;float:left;position: relative;}
+    /* main .mtcr ul a{position: absolute;width: 193px;height: 209px;background:blue;} */
+    main .mtcr ul li .mtcr-da{width: 160px;height: 200px;margin:4px 0 0 19px;overflow: hidden;}
+    main .mtcr ul li .mtcr-da .imgbox{width: 149px;height: 149px;display: block;margin:4px 0 6px 5px; text-align: center;line-height: 149px;}
+    main .mtcr ul li .mtcr-da .imgbox img{}
+    main .mtcr ul li .mtcr-da p{font-size: 12px;width: 193px;}
+    main .mtcr ul li .mtcr-da span{color: #cc0057;}
+    main .mtcr ul li .mtcr-da s{color:#999;}
+    footer{height:85px;margin-top:15px;text-align: center;}
+    footer h4{height: 48px;line-height: 48px;background: #eee;text-align: center;}
+    footer h4 a{padding:0 10px;border-right:1px solid #906690;}
+    footer h4 a:hover{text-decoration: underline;color:#f57a11;cursor: pointer;}
+    footer h4 .t7{border-right:0;}
+    footer p{margin-top:20px;}
+    </style>
+</head>
+<body>
+<div id="top" >
+        <div class="margin">
+        <div class="l">
+            <span class="first">您好，欢迎来到水果交易全新改版！</span><i></i><a href="#">会员登录</a><span>|</span><a href="#">免费注册</a><span>|</span><a href="#">忘记密码</a>
+        </div>
+        <div class="r">
+            <a href="#">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
+        </div> 
+        <div class="appear">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+        </div>
+        </div>
+    </div>
+    <!-- header -->
+    <header>
+        <div class="margin">
+            <div class="l">
+                <img src="images/logo.gif" >
+            </div>
+            <div class="c">
+                <div class="c-t">
+                    <div class="box">
+                    <input type="text" placeholder="请输入关键字" class="txt"/>
+                    <span class="sea"><i>V</i></span>
+                    <!-- 下拉框 -->
+                    <ul class="sele">
+                            <li>水果零售</li>
+                            <li>水果批发</li>
+                            <li>水果求购</li>
+                            <li>价格行情</li>
+                            <li>水果资讯</li>
+                            <li>批发市场</li>
+                            <li>水果供应商</li>
+                            <li>百科</li>
+                            <li>水果学院</li>
+                        </ul>
+                    </div>
+                    <input type="button" value="搜索" class="search">
+                </div>
+                <div class="c-b">
+                    <span>推广热搜：</span>
+                    <a href="#">苹果</a>
+                    <a href="#">葡萄</a>
+                    <a href="#">西瓜</a>
+                    <a href="#">脐橙</a>
+                    <a href="#">桔子</a>
+                    <a href="#">草莓</a>
+                    <a href="#">冬枣</a>
+                    <a href="#">荔枝</a>
+                    <a href="#">毛桃</a>
+                    <a href="#">水果</a>
+                </div>
+            </div>
+            <div class="r"><img src="images/t1.jpg"></div>
+        </div>
+    </header>
+    <nav>
+        <div class="margin">
+            <span class="te1">水果市场</span>
+            <ul class="n-li"> 
+                    <li><a href="#" class="te">水果零售</a></li>
+                    <li><a href="#">水果批发</a></li>
+                    <li><a href="#">水果求购</a></li>
+                    <li><a href="#">价格行情</a></li>
+                    <li><a href="#">水果资讯</a></li>
+                    <li><a href="#">批发市场</a></li>
+                    <li><a href="#">水果供应商</a></li>
+                    <li><a href="#">百科</a></li>
+                    <li><a href="#">水果学院</a></li>
+                </ul>
+            <span class="tes">手机交易</span>
+        </div>
+    </nav>
+<main>
+    <div class="margin">
+        <div class="mtcr">
+                <ul id="cont">
+                    <!-- <li>
+                    <div class="mtcr-da">
+                    <div class="imgbox"><img src="images/small 1.jpg"></div>
+                    <p>湖北省随州澳洲红肉李子批发</p>
+                    <span>面议</span><s>￥30:00</s>
+                    </div>
+                    </li>
+                    <li> -->  
+                </ul>
+            </div>
+    </div>
+</main>
+<footer>
+    <div class="margin">
+        <h4><a>网站首页</a><a>关于我们</a><a>联系方式</a><a>使用协议</a><a>版权隐私</a><a>网站地图</a><a>排名推广</a><a>广告服务</a><a>积分换礼</a><a>网站留言</a><a>RSS订阅</a><a class="t7">违规举报</a></h4>
+        <p>(c)2008-2013 qqsgjy.comSYSTEM All Rights Reserve</p>
+    </div>
+</footer>
+</body>
+<!-- <srcipt src="js/ajax.1.js"></srcipt> -->
+<script src="js/ajax.1.js"></script>
+<script>
+ // 商品列表的渲染
+class Goodlist{
+constructor(){
+    this.ul=document.querySelector("main .mtcr ul");
+    console.log(this.ul)
+    // this.cont=document.getElementById("cont");
+    this.url="http://localhost/fruit/data/goods.json";
+    //数据渲染
+    this.init()
+    //添加事件
+    this.addEvent()
+}
+addEvent(){
+    console.log(this.ul)
+        var  that=this;
+        //事件委托
+        this.ul.onclick=function(eve){
+            var e=event||window.event;
+            var target=e.target||e.srcElement;
+            console.log(target.nodeName)
+            if(target.nodeName=="A"||target.nodeName=="P"||target.nodeName=="IMG"||target.nodeName=="DIV"){
+            if(target.nodeName=="DIV"){
+                that.id=target.getAttribute("index");
+            }
+            if(target.nodeName=="P"){
+                that.id=target.parentNode.parentNode.getAttribute("index");
+            }
+            if(target.nodeName=="IMG"){
+                that.id=target.parentNode.parentNode.parentNode.getAttribute("index");
+            }
+            //   that.id=target.parentNode.getAttribute("index");//设置id完成后用于区分商品
+                //存储商品的localstorage
+                that.setData();
+            }
+        }
+    }
+    setData(){
+        this.goods=localStorage.getItem("goods");
+        if(this.goods){
+            this.goods=JSON.parse(this.goods)
+            var onoff=true;
+            for(var i=0;i<this.goods.length;i++){
+                if(this.goods[i].id==this.id){
+                    this.goods[i].num++;
+                    onoff=false;
+                }
+            }
+            if(onoff){
+                this.goods.push({
+                    id:this.id,
+                    num:1
+                })
+            }
+        }else{
+            this.goods=[{
+                id:this.id,
+                num:1
+            }]
+        }      
+        localStorage.setItem("goods",JSON.stringify(this.goods))
+}
+init(){
+    //拿数据
+    var that=this;
+    ajaxPost(
+        this.url,function(res){
+            // console.log(res)
+            that.res=JSON.parse(res);
+            that.display()
+        }
+    )
+}
+display(){
+    var str="";
+    for(var i=0;i<this.res.length;i++){
+        str+=`<li>
+                <div class="mtcr-da" index="${this.res[i].goodsId}">
+                <a href="detail.html">
+                <p class="imgbox"><img src="${this.res[i].src}"></p>
+                <p>${this.res[i].descr}</p>
+                <span>￥：${this.res[i].price}</span><s>${this.res[i].discount}</s>
+                </a></div>
+                </li>`;
+        }
+    this.ul.innerHTML=str;
+}
+}
+new Goodlist();
+
+
+
+
+</script>
+</html>
