@@ -268,14 +268,17 @@
 <script src="js/ajax.1.js"></script>
 <script>
    class Render{
+ 
     constructor(){
             //完成数据的渲染
             this.ol=document.querySelector("main .ac .l");
-            this.url="data/goods.json";
+            this.url="data/goods.json"; 
+               
             this.init()
         }
     init(){
         var that=this;
+    
         ajaxPost(this.url,function(res){
             that.res=JSON.parse(res);
             that.getData();
@@ -283,10 +286,20 @@
         }
     getData(){
         this.goods=localStorage.getItem("goods")?JSON.parse(localStorage.getItem("goods")):[];
+
         console.log(this.goods)
         console.log(this.res)
         this.display()
     } 
+    setData(callback){
+            for(var i=0;i<this.goods.length;i++){
+                if(this.goods[i].id==this.id){
+                    callback(i)
+                }
+            }
+            localStorage.setItem("goods",JSON.stringify(this.goods));
+        }
+
     display(){
         var str="";
         for(var i=0;i<this.res.length;i++){
@@ -294,18 +307,18 @@
                 if(this.res[i].goodsId==this.goods[j].id){
                     str+=`
                     <h4><p>${this.res[i].descr}</p></h4>
-                    <div class="lb">
-                        <div class="cont">
-                            <div class="exhibit">
-                                <img src="${this.res[i].src}" />
-                                <span></span>
-                                <p></p>
-                            </div>
-                            <ul>
-                                <li><img src="${this.res[i].src}"/></li>
-                                <li><img src="${this.res[i].pic}"/></li>
-                                <li><img src="${this.res[i].pho}"/></li>
-                            </ul>
+                <div class="lb">
+                    <div class="cont">
+                        <div class="exhibit">
+                            <img src="${this.res[i].src}" />
+                            <span></span>
+                            <p></p>
+                        </div>
+                    <ul>
+                        <li><img src="${this.res[i].src}"/></li>
+                        <li><img src="${this.res[i].pic}"/></li>
+                        <li><img src="${this.res[i].pho}"/></li>
+                    </ul>
                         </div>
                         <div class="box">
                             <img src="${this.res[i].src}"/>
@@ -327,10 +340,7 @@
         this.ol.innerHTML=str;
         }
    }
-
     new Render()
-
-
 
   function Exhibit(){
     this.exhibit=document.querySelector(".exhibit");

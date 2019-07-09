@@ -899,6 +899,7 @@
     constructor(){
         this.ul=document.querySelector("main .mtg .mtcr ul");
         // this.cont=document.getElementById("cont");
+        window.localStorage.removeItem('goods')
         this.url="http://localhost/fruit/data/goods.json";
         //数据渲染
         this.init()
@@ -925,6 +926,7 @@
                 }
                 //   that.id=target.parentNode.getAttribute("index");//设置id完成后用于区分商品
                   //存储商品的localstorage
+                 
                   that.setData();
                 }
             }

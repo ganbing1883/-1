@@ -66,6 +66,7 @@
     main .account p .btn{background: #007aff;border-radius: 5px;font-size: 16px;color: #fff; }
     main .account p a{padding: 0 9px;color:#007aff;}
     main .account p .te8{border-right: 1px solid #007aff;}
+    main .account .demon{margin:0;color: red;}
     main .mes{height: 314px;display: none;overflow: hidden;text-align: left;}
     main .mes p{margin-top: 19px;margin-left:20px;}
     main .mes p .txt1{width: 298px;height: 41px;border: 1px solid #e5e5e5;text-indent: 10px;border-radius: 5px;}
@@ -163,9 +164,10 @@
     <div class="login">
         <h4><span>账户登录</span><span>短信登录</span></h4>
     <div class="account">
-        <p><input type="text" placeholder="用户名/Email/已认证手机"></p>
-        <p><input type="password" placeholder="密码"></p>
+        <p><input type="text" placeholder="用户名/Email/已认证手机" class="txt"></p>
+        <p><input type="password" placeholder="密码" class="pass"></p>
         <p><input type="button" value="登录" class="btn"></p>
+        <p class="demon"></p>
         <p><a class="te8">会员注册</a><a>忘记密码</a></p>
     </div>
     <div class="mes">
@@ -221,6 +223,33 @@
         }
     }
     new veri();
-
+    class record{
+        constructor(){
+            this.txt=document.querySelector("main .account .txt");
+            this.pass=document.querySelector("main .account .pass");
+            this.btn=document.querySelector("main .account .btn");
+            this.op=document.querySelector("main .account .demon");
+            this.init()
+        }
+        init(){
+            var that=this;
+            this.btn.onclick=function(){
+            var url="http://localhost/fruit/php/login.php";
+            ajaxGet(
+                url,
+                function(res){
+                that.op.innerHTML=res;
+                if(res=="登录成功!"){
+                 location.href="http://localhost/fruit/particular.html"
+                }
+                },{
+                user:that.txt.value,
+                pass:that.pass.value
+                }   
+                )
+            }
+        }
+    }
+    new record()
 </script>
 </html>
