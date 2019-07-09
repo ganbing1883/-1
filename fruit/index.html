@@ -10,7 +10,7 @@
     <style>
         li{list-style: none;}
         main{}
-        main .mt{overflow: hidden;}
+        main .mt{overflow: hidden;position: relative;}
         main .mt .mt-l ul{border: 1px solid #eee;width: 188px;float: left;}
         main .mt .mt-l ul li{font-style:normal;height: 56px;border-bottom: 1px solid #eee;width: 188px;text-align: center;background: #f8f8f8;}
         main .mt .mt-l ul li:hover{background:#eee;}
@@ -23,6 +23,13 @@
         main .mt .mt-l ul li p a{color: #b2b2b2;padding-right: 5px;}
         main .mt .mt-l ul li i{font-style:normal;width: 20px;height: 20px;display: inline-block;}
         main .mt .mt-l ul li b{font-style:normal;color: #b2b2b2;}
+        /* 3级联动 */
+        main .mt .mt-l dl{position: absolute;}
+        main .mt .mt-l dl dd{width:768px;height: 518px;background:#eee;position: absolute;left: 190px;z-index: 5;display: none;}
+        main .mt .mt-l dl dd .mbox{width:360px;height:440px;margin-left: 20px;float: left;margin-top:65px;}
+        main .mt .mt-l dl dd .mbox a{padding:0px 8px;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;line-height: 24px;cursor: pointer;}
+        main .mt .mt-l dl dd img{margin-left:20px;float:left;}
+        main .mt .mt-l dl dd .mbox a:hover{color:#f57a11;text-decoration: underline;}
         /* banner */
         main .mt .mt-c{width: 750px;float: left;height: 443px;position: relative;overflow: hidden;margin:15px 17px;}
         main .mt .mt-c a{width: 750px;height: 443px; position: absolute;left: 750px;top: 0;}
@@ -128,6 +135,16 @@
         main .mark .markt .mr ul li .mtcr-da .imgbox{width: 149px;height: 149px;display: block;margin:4px 0 6px 5px; text-align: center;line-height: 149px;}
         main .mark .markt .mr ul li .mtcr-da .imgbox img{}
         main .mark .markt .mr ul li .mtcr-da p{font-size: 12px;width: 193px;}
+        /* 导航栏 */
+        #Right-sided{width: 56px;height: 300px;position: fixed;right: 20px;top: 285px;}
+        #Right-sided ul{}
+        #Right-sided ul li{width: 54px;height: 54px;border: 1px solid #e5e5e5;margin:2px 0;text-align: center;background: #fff;}
+        #Right-sided ul li a{width: 40px;display: block;margin-top:5px;margin-left: 6px;}
+        #Right-sided ul li .te{font-size: 36px;color:#666;}
+        #Right-sided ul .active{background: #98D3ff;}
+        #Right-sided ul .current{color:#fff;}
+
+
 
         main .minf{height: 456px;}
         main .minf .ml{width: 420px;height: 456px;float:left;}
@@ -186,7 +203,7 @@
         <span class="first">您好，欢迎来到水果交易全新改版！</span><i></i><a href="login.html">会员登录</a><span>|</span><a href="register.html">免费注册</a><span>|</span><a href="#">忘记密码</a>
     </div>
     <div class="r">
-        <a href="#">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
+        <a href="particular.html">购物车(<span>0</span>)</a><a href="#">触摸版</a><a href="#">手机交易<i>></i></a><a href="#">关注我们<i>></i></a><a href="#" id="ap">关于我们<i>></i></a>
     </div> 
     <div class="appear">
         <a href="#">关于我们</a>
@@ -197,14 +214,15 @@
 <!-- header -->
 <header>
     <div class="margin">
-        <div class="l">
+        <div class="l b">
             <img src="images/logo.gif" >
         </div>
         <div class="c">
             <div class="c-t">
                 <div class="box">
-                <input type="text" placeholder="请输入关键字" class="txt"/>
+                <input type="text" placeholder="请输入关键字" class="txt" id="txt"/>
                 <span class="sea"><i>V</i></span>
+                <ul class="scout"></ul>
                 <!-- 下拉框 -->
                 <ul class="sele">
                         <li>水果零售</li>
@@ -234,7 +252,7 @@
                 <a href="#">水果</a>
             </div>
         </div>
-        <div class="r"><img src="images/t1.jpg"></div>
+        <div class="r "><img src="images/t1.jpg"></div>
     </div>
 </header>
 <nav>
@@ -256,7 +274,7 @@
 </nav>
 <main>
     <div class="margin">
-        <div class="mt">
+        <div class="mt ">
             <div class="mt-l">
                 <ul>
                     <li>
@@ -292,6 +310,80 @@
                         <div class="mt-l-r"><span>水果苗木</span><b>></b> <p><a>苹果树苗</a><a>葡萄树</a></p></div>
                     </li>
                 </ul>
+                <dl>
+                    <dd> 
+                        <div class="mbox">
+                          <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                          <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                          <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                          <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d1.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d2.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d3.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d4.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d5.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d6.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                            <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                            <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                            <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                            <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                        <img src="images/d7.jpg">
+                    </dd>
+                    <dd>
+                    <div class="mbox">
+                          <p><a>苹果</a><a>西瓜</a><a>油桃</a><a>桃子</a></p>
+                          <p><a>草莓</a><a>桔子</a><a>梨</a><a>菠萝</a></p>
+                          <p><a>桂圆,龙眼</a><a>椰子</a><a>榴莲</a><a>橄榄</a></p>
+                          <p><a>李子</a><a>柚子</a><a>圣女果</a><a>杨桃</a></p>
+                        </div>
+                    </dd>
+                </dl>
+
             </div>
             <div class="mt-c">
                     <a href="#"><img src="images/b1.jpg"></a>
@@ -302,7 +394,7 @@
                     <input type="button" id="right" value=">">
                 </div>
             </div>
-            <div class="mt-r">
+            <div class="mt-r b">
                 <div class="imgbox">
                     <img src="images/t2.jpg">
                     <p><i></i><span>怎么制作顺序如何...</span></p>
@@ -365,7 +457,7 @@
     </div>
     </div>
     <div class="margin">
-        <div class="mtg">
+        <div class="mtg ">
             <h4 class="h4"><i></i><b>水果批发</b><p><span>生鲜水果</span><span>蔬菜批发</span><span>畜牧禽类</span><span>粮油米面</span><span>水果苗木</span><span>冷库水果</span><span>水果树苗</span><span>梨树苗</span></p></h4>
             <div class="mtc">
                 <div class="mtcl">
@@ -382,7 +474,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mtcr">
+                <div class="mtcr b">
                     <ul id="cont">
                         <!-- <li>
                         <div class="mtcr-da">
@@ -412,6 +504,19 @@
         </div>
     </div>
     <div class="margin">
+        <div class="rbox">
+        <div id="Right-sided">
+            <ul class="btns">
+                <li><a href="#">一楼</a></li>
+                <li><a href="#">二楼</a></li>
+                <li><a href="#">三楼</a></li>
+                <li><a href="#">四楼</a></li>
+                <li><a href="#" class="te">^</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="margin">
             <div class="mark">
                 <h4 class="h4"><i></i><b>水果批发</b><p><span>生鲜水果</span><span>蔬菜批发</span><span>畜牧禽类</span><span>粮油米面</span><span>水果苗木</span><span>冷库水果</span><span>水果树苗</span><span>梨树苗</span></p></h4>
                 <div class="markt">
@@ -426,7 +531,7 @@
                                 <p><span><a>四川</a><a>贵州</a><a>云南</a><a>西藏</a></span></p>
                             </div>
                         </div>
-                        <div class="mr">
+                        <div class="mr b">
                                 <ul>
                                     <li>
                                     <div class="mtcr-da">
@@ -494,7 +599,7 @@
             </div>
     </div>
     <div class="margin">
-        <div class="minf">
+        <div class="minf b">
             <div class="ml">
                 <h4><span>热门资讯</span></h4>
                     <p><img src="images/mft1.gif"></p>
@@ -592,11 +697,203 @@
 </footer>
 </body>
 <script src="js/items.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/ajax.1.js"></script>
-<script src="js/goods.js"></script>
 <script src="js/move.js"></script>
 <script>
    //mt-r span的滚动
+    //search
+    function search(){
+    this.input=document.getElementById("txt");
+    this.ul=document.getElementsByTagName("ul")[0];
+    console.log(this.ul.parentNode)
+    this.index=0;
+    this.code=0;
+    this.init()
+   }
+   search.prototype.init=function(){
+       this.input.onkeyup=function(e){
+           var e=event||window.event;
+           var code=e.keyCode||e.which;
+            this.code=code;
+         this.value=this.input.value; 
+            this.ferret(this.value);
+       }.bind(this)
+      
+   }
+   search.prototype.ferret=function(x){
+       var script=document.createElement("script");
+       var wd=x;
+        script.src="https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=29358,1451,21116,29073,29238,28519,29099,29131,29368,28833,29221,26350&wd="+ wd +"&req=2&csor=1&cb=jQuery110209493171718918971_1561298781420&_=1561298781423"
+        document.body.appendChild(script);
+        this.ul.style.display="block";
+        this.li=this.ul.getElementsByTagName("li");
+        this.over();
+    }
+    search.prototype.over=function(){
+        // console.log(this.li)
+        //鼠标事件
+        var that=this;
+        this.ul.onmouseover=function(e){
+            var e=event||window.event;
+            var target=e.target||e.srcElement;
+            if(target.nodeName=="LI"){
+            target.style.background="#ccc";
+              target.onclick=function(){
+             that.input.value=target.innerHTML;
+              that.ul.style.display="none";
+            }
+            }
+        }
+        this.ul.onmouseout=function(e){
+            var e=event||window.event;
+            var target=e.target||e.srcelement;
+            if(target.nodeName=="LI"){
+                target.style.background="#fff";
+            }
+        }
+     this.key();
+    }
+    search.prototype.key=function(){
+        var that=this;
+        document.onkeydown=function(e){
+            var e=event||window.event;
+            var code=e.keyCode||e.which;
+                that.code=code;
+            // console.log(this.code)
+        console.log(this.code)
+        // if(this.code==0)return;
+        if(this.code==38){
+                if(this.index==0){
+                    this.index=0;
+                }else{this.index--}
+                for(var i=0;i<this.li.length;i++){
+                 this.li[i].className="";
+            }
+            this.li[this.index].classList.add('active');
+            }
+            // console.log(that.li.length)
+            if(this.code==40){
+                if(this.index==that.li.length-1){
+                    this.index=that.li.length-1;
+                }else{
+                    this.index++;
+                }
+                for(var i=0;i<this.li.length;i++){
+                 this.li[i].className="";
+                  }
+                this.li[this.index].classList.add('active');
+                // this.li[this.index].style.background="red";
+            }
+        }
+    } 
+   function jQuery110209493171718918971_1561298781420(data){
+       var ul=document.getElementsByTagName("ul")[0];
+        ul.innerHTML="";
+        if(data.g==undefined){
+            return;
+        }else{
+       for(var i=0;i<data.g.length;i++){
+           var oli=document.createElement("li");
+           oli.innerHTML=data.g[i].q;
+           ul.appendChild(oli);
+        }
+    }
+   }
+  
+   new search();    
+
+
+
+ // 侧边导航
+    $("#Right-sided .btns").children("li").click(function(){
+    console.log($(this).index())
+    //跳转效果
+    // $(document).scrollTop($(".b").eq($(this).index()).offset().top)
+    // console.log($(".b").eq(index).offset().top)
+    //将这个位置设置给滚动条添加运动的动画
+    console.log($("html").stop().animate({scrollTop:$(".b").eq($(this).index()).offset().top}))
+    })
+
+    function RightSide(){
+        this.rightside=document.getElementById("Right-sided");
+        this.oli=this.rightside.getElementsByTagName("li");
+        this.oa=this.rightside.getElementsByTagName("a");
+        this.init()
+    }
+    RightSide.prototype.init=function(){
+        for(var i=0;i<this.oli.length;i++){
+            var that=this;
+            this.oli[i].setAttribute("xuhao",i);
+            this.oli[i].onmouseover=function(){
+                for(var j=0;j<that.oli.length;j++){
+                    that.oli[j].className="";
+                    that.oa[j].className="";
+                }
+                that.oa[4].className="te";
+                this.className="active";
+                var index=this.getAttribute("xuhao")
+                that.oa[index].className+=" "+"current";
+            }
+        }
+        this.display()
+    }
+   RightSide.prototype.display=function(){
+        onscroll=function(){
+            this.oscollTop=document.documentElement.scrollTop;
+            if(this.oscollTop<180){
+            this.rightside.style.display="none";
+            }else{
+            this.rightside.style.display="block";
+            }
+        }.bind(this)
+        //点击回到顶部
+    
+       
+    
+    }
+    new RightSide()
+
+   // 
+   class Cascade{
+       constructor(){
+            this.ul=document.querySelector("main .mt .mt-l ul");
+            this.li=document.querySelectorAll("main .mt .mt-l ul li");
+            this.dl=document.querySelector("main .mt .mt-l dl")
+            this.dd=document.querySelectorAll("main .mt .mt-l dl dd")
+            this.init()
+       }
+       init(){
+           for(let i=0;i<this.li.length;i++){
+               var that=this;
+               this.li[i].setAttribute("xuhao",i)
+               this.li[i].onmouseover=function(){
+               that.dd[i].style.display="block";
+               }
+               this.li[i].onmouseout=function(){
+               that.dd[i].style.display="none";
+               }
+               this.dd[i].onmouseover=function(){
+               that.dd[i].style.display="block";
+               }
+               this.dd[i].onmouseout=function(){
+               that.dd[i].style.display="none";
+               }
+           }
+       }
+   }
+   new Cascade();
+
+
+
+
+
+
+
+
+
+
+
    // 商品列表的渲染
  class Goodlist{
     constructor(){
@@ -684,6 +981,7 @@
     }
 }
 new Goodlist();
+
 
    
 </script>

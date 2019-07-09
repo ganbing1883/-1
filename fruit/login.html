@@ -186,41 +186,41 @@
 </footer>
 </body>
 <script src="js/public.js"></script>
+<script src="js/ajax.1.js"></script>
 <script>
-    console.log(vericode())
-class login{
-    constructor(){
-            this.span=document.querySelectorAll("main .login  span");
-            this.div=document.querySelectorAll("main .login div");
-            this.init()
-        }
-        init(){
-            var that=this;
-         this.span[0].onclick=function(){
-            this.style.borderBottom="3px solid #2587f4";
-            that.span[1].style.borderBottom="3px solid #666";
-            that.div[0].style.display="block";
-            that.div[1].style.display="none";
-        }
-        this.span[1].onclick=function(){
-            this.style.borderBottom="3px solid #2587f4";
-            that.span[0].style.borderBottom="3px solid #666";
-            that.div[0].style.display="none";
-            that.div[1].style.display="block";
-         }
-        }
-}
-new login();
-// 登录验证码
-class veri{
-    constructor(){
-        this.code=vericode();
-        this.span=document.querySelector("main .mes span");
-        this.span.innerHTML=this.code;
-        this.span.style.color=randomColor()
+    class login{
+        constructor(){
+                this.span=document.querySelectorAll("main .login  span");
+                this.div=document.querySelectorAll("main .login div");
+                this.init()
+            }
+            init(){
+                var that=this;
+            this.span[0].onclick=function(){
+                this.style.borderBottom="3px solid #2587f4";
+                that.span[1].style.borderBottom="3px solid #666";
+                that.div[0].style.display="block";
+                that.div[1].style.display="none";
+            }
+            this.span[1].onclick=function(){
+                this.style.borderBottom="3px solid #2587f4";
+                that.span[0].style.borderBottom="3px solid #666";
+                that.div[0].style.display="none";
+                that.div[1].style.display="block";
+            }
+            }
     }
-}
-new veri();
+    new login();
+    // 登录验证码
+    class veri{
+        constructor(){
+            this.code=vericode();
+            this.span=document.querySelector("main .mes span");
+            this.span.innerHTML=this.code;
+            this.span.style.color=randomColor()
+        }
+    }
+    new veri();
 
 </script>
 </html>

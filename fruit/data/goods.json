@@ -1,72 +1,91 @@
 [{
     "src":"images/small 1.jpg",
-    "srcs":"images/big 1.jpg",
     "descr":"嘉伟莲马来西亚猫山王榴莲",
     "price":"100",
     "discount":"￥30.00",
-    "goodsId":"g1"
+    "goodsId":"g1",
+    "pic":"images/small-1.jpg",
+    "pho":"images/small-2.jpg"
 },
 {
     "src":"images/small 2.jpg",
     "descr":"山东大棚京欣西瓜大量上市",
-    "price":"1.20",
+    "price":"2",
     "discount":"￥30.00",
-    "goodsId":"g2"
+    "goodsId":"g2",
+    "pic":"images/small 2.jpg",
+    "pho":"images/small 2.jpg"
 },
 {
     "src":"images/small 3.jpg",
     "descr":"山东大棚西瓜批发价格产地报",
     "price":"1.00",
     "discount":"￥30.00",
-    "goodsId":"g3"
+    "goodsId":"g3",
+    "pic":"images/small 3.jpg",
+    "pho":"images/small 3.jpg"
 },
 {
     "src":"images/small 4.jpg",
     "descr":"大棚油桃产地批发价格中油批",
     "price":"2.00",
     "discount":"￥30.00",
-    "goodsId":"g4"
+    "goodsId":"g4",
+    "pic":"images/small 4.jpg",
+    "pho":"images/small 4.jpg"
 },
 {
     "src":"images/small 5.jpg",
     "descr":"陕西金太阳杏价格陕西丰园红",
     "price":"100",
     "discount":"￥30.00",
-    "goodsId":"g5"
+    "goodsId":"g5",
+    "pic":"images/small-3.jpg",
+    "pho":"images/small-4.jpg"
 },
 {
     "src":"images/small 6.jpg",
     "descr":"陕西红富士苹果基地红提葡萄",
     "price":"20", 
     "discount":"￥30.00",
-    "goodsId":"g6"
+    "goodsId":"g6",
+    "pic":"images/small-5.jpg",
+    "pho":"images/small-6.jpg"
 },
 {
     "src":"images/small 7.jpg",
     "descr":"湖北省随州澳洲红肉李子批发",
     "price":"10",
     "discount":"￥30.00",
-    "goodsId":"g7"
+    "goodsId":"g7",
+    "pic":"images/small 7.jpg",
+    "pho":"images/small 7.jpg"
 },
 {
     "src":"images/small 8.jpg",
     "descr":"山东甜瓜基地甜瓜产地批发价",
     "price":"10",
     "discount":"￥30.00",
-    "goodsId":"g8"
+    "goodsId":"g8",
+    "pic":"images/small 8.jpg",
+    "pho":"images/small 8.jpg"
 },
 {
     "src":"images/small 9.jpg",
     "descr":"山东苹果批发最低价格红富士 ",
-    "price":"0.5",
+    "price":"5",
     "discount":"￥30.00",
-    "goodsId":"g9"
+    "goodsId":"g9",
+    "pic":"images/small-7.jpg",
+    "pho":"images/small-8.jpg"
 },
 {
     "src":"images/small 10.jpg",
     "descr":"供应大棚花皮甜瓜冰糖籽甜瓜",
     "price":"10",
     "discount":"￥30.00",
-    "goodsId":"g10"
+    "goodsId":"g10",
+    "pic":"images/small-9.jpg",
+    "pho":"images/small-10.jpg"
 }
 ]
