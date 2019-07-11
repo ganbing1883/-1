@@ -248,20 +248,21 @@ class car{
                     //获取点击对应的商品的id;
                     that.id=target.parentNode.parentNode.getAttribute("index");
                     //删除dom的节点
-                    console.log(target.parentNode.parentNode)
+                    // console.log(target.parentNode.parentNode)
                     target.parentNode.parentNode.remove();
                     //需要清除localStorage数据
               
                     that.setData(function(i){
-                        console.log(10)
                         that.goods.splice(i,1)
                     })
+                    that.sum()
+
                 }
                 //商品数量的功能
                 if(target.className=="small-button"){
                     } 
                 if(target.className=="check"){
-                    console.log(target.className)
+                    // console.log(target.className)
                     that.sum()
                   }        
                 }
@@ -293,10 +294,10 @@ class car{
                     var input=target.parentNode.parentNode.querySelector(".count").value;
                     // console.log(input)
                     // //计算显示数据
-                    console.log(price.textContent)
-                    console.log(price.textContent.slice(1,price.textContent.length))
+                    // console.log(price.textContent)
+                    // console.log(price.textContent.slice(1,price.textContent.length))
                      var newprice=parseInt(price.textContent.slice(1,price.textContent.length))*input;
-                     console.log(newprice)
+                    //  console.log(newprice)
                      contprice.innerHTML=newprice;
                      // 设置商品的数量
 
@@ -334,13 +335,13 @@ class car{
                         }
                     }
               //数据的总和
-              console.log(1010)
+            //   console.log(1010)
               that.sum();
          }
         }
         sum(){
              //单选和数据总和
-            //  console.log(1)
+             console.log(1)
              var divs=document.querySelectorAll(".body");
              var count=0;//总数
              var sumPrice=0;//总价
@@ -352,7 +353,7 @@ class car{
              sumPrice+=parseInt(divs[i].querySelector(".priceCount").innerHTML);
                 }
             } 
-            console.log(count)  
+            // console.log(count)  
             // console.log(sumPrice)  
              document.querySelector("#toalCount").innerHTML=parseInt(count);
              document.querySelector("#toalPrice").innerHTML='￥'+sumPrice.toFixed(2);
@@ -366,7 +367,7 @@ class car{
                 // console.log(input)
                 // //计算显示数据
                 var newprice=parseInt(this.price[i].textContent.slice(1,this.price[i].textContent.length))*this.input[i].value;
-                console.log(newprice)
+                // console.log(newprice)
                 this.contprice[i].innerHTML=newprice;
             }
             // this.single=document.querySelectorAll(".body .count");

@@ -1,10 +1,25 @@
 <?php
 $user= @$_REQUEST["user"];
 $pass= @$_REQUEST["pass"];
-if($user=="admin" || $pass=="123"){
-    echo "登录成功!";
+@header("content-Type: text/html; charset=utf-8"); //语言强制
+$link=@new mysqli("localhost:3306","root","root","test");
+if($link->connect_error){
+    echo '{"code":0,"msg":"连接失败"}';
 }else{
-    echo "用户名或密码不正确!";
-};
-// echo '{"msg":"这是就收到的数据","user":"'.$user.'","pass":"'.$pass.'"}';
+    echo '['.select().']';
+}
+
+function select(){
+    global $link;
+    $q=$link->query("select * from login");
+    $str="";
+    while($arr=$q->fetch_assoc()){
+        $str=$str.json_encode($arr).",";
+    }
+    return substr($str,0,-1);
+    }
+
+
+
+
 ?>

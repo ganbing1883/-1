@@ -82,7 +82,7 @@
     main .ac .l .lb .cox p .mtl2{margin-left: 34px}
     main .ac .l .lb .cox p input{width: 132px;height: 36px;font-size: 20px;border-radius: 5px;color: #fff;cursor: pointer;margin-top:54px; }
     main .ac .l .lb .cox p #btn1{background:linear-gradient(to top,orangered,orange);border: 1px solid #f26c4f;}
-    main .ac .l .lb .cox p #btn2{background:linear-gradient(to top,#3b99d7,#97cff2);border: 1px solid #429bd5;margin-left:13px;}
+    main .ac .l .lb .cox p #btn2{background:linear-gradient(to top,#3b99d7,#97cff2);border: 1px solid #429bd5;margin-left:13px;display: inline-block;border-radius: 5px;}
     main .ac .r{float: right;width: 300px;height: 475px;}
     main .ac .r h4{height: 44px;border-top:2px solid #007aff;line-height: 44px;text-align: center;border-bottom: 1px solid #e2e2e2; }
     main .ac .r ul{}
@@ -219,7 +219,10 @@
                 <p>有效期至：<span class="mtl2">长期有效</span></p>
                 <p>最后更新：<span class="mtl2">2019-06-06 15:43</span></p>
                 <p>浏览次数：<span class="mtl2">143</span></p>
-                <p><input type="button"value="立即购买" id="btn1"/><input type="button" value="加入购物车" id="btn2"/></p>
+                <p>
+                    <input type="button"value="立即购买hhhh" id="btn1"/>
+                    <a href="http://localhost/fruit/settle.html" id="btn2">加入购物车</a>
+                </p>
             </div>
         </div>
     </div>
@@ -264,11 +267,11 @@
     </div>
 </footer>
 </body>
-<script src="js/items.js"></script>
 <script src="js/ajax.1.js"></script>
+<!-- <script src="js/items.js"></script> -->
 <script>
+   //点击跳转到购物车的页面
    class Render{
- 
     constructor(){
             //完成数据的渲染
             this.ol=document.querySelector("main .ac .l");
@@ -287,8 +290,8 @@
     getData(){
         this.goods=localStorage.getItem("goods")?JSON.parse(localStorage.getItem("goods")):[];
 
-        console.log(this.goods)
-        console.log(this.res)
+        // console.log(this.goods)
+        // console.log(this.res)
         this.display()
     } 
     setData(callback){
@@ -332,7 +335,7 @@
                             <p>有效期至：<span class="mtl2">长期有效</span></p>
                             <p>最后更新：<span class="mtl2">2019-06-06 15:43</span></p>
                             <p>浏览次数：<span class="mtl2">143</span></p>
-                            <p><input type="button"value="立即购买" id="btn1"/><input type="button" value="加入购物车" id="btn2"/></p>
+                            <p><input type="button"value="立即购买" id="btn1"/> <a href="http://localhost/fruit/settle.html" id="btn2">加入购物车</a></p>
                         </div>`
                 }
             }
@@ -365,18 +368,18 @@
    Exhibit.prototype.boost=function(){
  
     //计算span的尺寸
-    console.log(this.bimg.offsetHeight)
+    // console.log(this.bimg.offsetHeight)
     //右边大图的宽高除以右边div的宽高得到比例
     var w=this.bimg.offsetWidth/this.box.offsetWidth;
     var h=this.bimg.offsetHeight/this.box.offsetHeight;
-    console.log(h)
+    // console.log(h)
     //小框的宽度与比例相除得到span的宽度
-    console.log(this.exhibit.offsetHeight)
+    // console.log(this.exhibit.offsetHeight)
     this.span.style.width=(this.exhibit.offsetWidth/w)*1/4+"px";
     // this.span.style.width=40+"px";
     // this.span.style.height=this.exhibit.offsetHeight/h+"px";
     this.span.style.height=60+"px";
-    console.log(this.span.style.height)
+    // console.log(this.span.style.height)
     this.addEvent();
    }
    Exhibit.prototype.addEvent=function(){

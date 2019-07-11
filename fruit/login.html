@@ -164,8 +164,8 @@
     <div class="login">
         <h4><span>账户登录</span><span>短信登录</span></h4>
     <div class="account">
-        <p><input type="text" placeholder="用户名/Email/已认证手机" class="txt"></p>
-        <p><input type="password" placeholder="密码" class="pass"></p>
+        <p><input type="text" placeholder="用户名/Email/已认证手机" class="txt" name="user"></p>
+        <p><input type="password" placeholder="密码" class="pass" pass="pass"></p>
         <p><input type="button" value="登录" class="btn"></p>
         <p class="demon"></p>
         <p><a class="te8">会员注册</a><a>忘记密码</a></p>
@@ -190,6 +190,7 @@
 <script src="js/public.js"></script>
 <script src="js/ajax.1.js"></script>
 <script>
+
     class login{
         constructor(){
                 this.span=document.querySelectorAll("main .login  span");
@@ -222,6 +223,7 @@
             this.span.style.color=randomColor()
         }
     }
+    
     new veri();
     class record{
         constructor(){
@@ -229,6 +231,7 @@
             this.pass=document.querySelector("main .account .pass");
             this.btn=document.querySelector("main .account .btn");
             this.op=document.querySelector("main .account .demon");
+            this.status=0;
             this.init()
         }
         init(){
@@ -238,9 +241,22 @@
             ajaxGet(
                 url,
                 function(res){
-                that.op.innerHTML=res;
-                if(res=="登录成功!"){
+                // console.log(res)
+                // console.log(JSON.parse(res))
+                // console.log(typeof JSON.parse(res))
+                that.res=JSON.parse(res);
+                for(var i=0;i<that.res.length;i++){
+                    // console.log(that.res[i])
+                    if(that.res[i].user==that.txt.value&&that.res[i].pass==that.pass.value){
+                       that.status=1;
+                    }
+                    // console.log(that.res[i].user)
+                }
+                // console.log(that.status)
+                if(that.status=="1"){
                  location.href="http://localhost/fruit/particular.html"
+                }else{
+                that.op.innerHTML="用户名或密码错误!";
                 }
                 },{
                 user:that.txt.value,

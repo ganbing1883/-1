@@ -92,6 +92,7 @@
     main #b label:nth-child(4) input{text-indent: 20px;background: url(images/t2.gif) no-repeat 3px;border:none;border:1px solid #ccc;}
     main #b label:nth-child(5) input{text-indent: 10px;background: url(images/t3.gif) no-repeat 3px;border: none;border:1px solid #ccc;}
     main #b label .btn{background: #007aff;color: #fff;border: 0;}
+    main #b label .exhi{display: inline-block;width: 104px;height: 26px;color: red;line-height: 26px;font-size:24px;}
     footer{height:85px;margin-top:15px;text-align: center;}
     footer h4{height: 48px;line-height: 48px;background: #eee;text-align: center;}
     footer h4 a{padding:0 10px;border-right:1px solid #906690;}
@@ -179,14 +180,14 @@
     <div class="margin">
         <div class="regis">
             <form id="b">
-                <label><input type="text" placeholder="用户名"/><span class="te"></span></label>
-                <label><input type="password" placeholder="密码"/><p></p></label>
+                <label><input type="text" placeholder="用户名"  class="user"/><span class="te"></span></label>
+                <label><input type="password" placeholder="密码" class="pass"/><p></p></label>
                 <label><input type="password"placeholder="再次输入密码"/><p></p></label>
                 <label><input type="text" placeholder="姓名"/><p></p></label>
                 <label><input type="text"placeholder="身份证"/><p></p></label>
                 <label class="little"><input type="text" placeholder="请输入验证码"class="veri"/><span class="bigcode"></span><a>换一张</a></label>
                 <label class="display"><span></span></label>
-                <label><input type="button" value="注册" class="btn"/></label>
+                <label><input type="button" value="注册" class="btn"/><span class="exhi"></span></label>
             </form>
         </div>
     </div>
@@ -199,7 +200,40 @@
 </footer>
 </body>
 <script src="js/public.js"></script>
+<script src="js/ajax.1.js"></script>
 <script>
+//注册
+class logon{
+    constructor(){
+        this.user=document.querySelector("main #b .user");
+        this.pass=document.querySelector("main #b .pass");
+        this.btn=document.querySelector("main #b .btn");
+        this.span=document.querySelector("main #b .exhi");
+        console.log(this.span)
+        this.init();
+    }
+    init(){
+        var that=this;
+        var url="http://localhost/fruit/php/register.php";
+        this.btn.onclick=function(){
+        ajaxPost(
+                url,
+                function(res){
+                console.log(res)
+                that.span.innerHTML=res;
+                },{
+                user:that.user.value,
+                pass:that.pass.value
+                }
+        )
+        }
+    }
+}
+new logon()
+
+
+
+
 
 // 注册验证
 class regis{

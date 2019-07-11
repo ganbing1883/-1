@@ -78,7 +78,7 @@ function select(){
         },3000)
     }
     changeLayers.prototype.changeIndex=function(x){
-        clearInterval(this.timer);
+        // clearInterval(this.timer);
         if(x==1){
             if(this.index==this.oa.length-1){
                 this.index=0;
